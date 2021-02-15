@@ -1,7 +1,5 @@
 body {
-  font: 14px;
-  font-family: 'akzidenz-grotesk_proregular'
-}
+  font: 14px "akzidenz-grotesk_proregular"}
 
 h1 {
     font-family: 'editorial_newregular', Arial, sans-serif;
@@ -62,50 +60,123 @@ h1 {
   width: 100%; 
   left: 0; 
 }
+
 /* HOMEPAGE */
 
-/* Container needed to position the button. Adjust the width as needed */
-.container {
-  position: relative;
-  width: 50%;
+
+/* Main container for images */
+#allImagesContainer {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Make the image responsive */
-.imageContainer img {
-  width: 100%;
-  height: auto;
-}
 
-/* Style the button and place it in the middle of the container/image */
+/* Style the buttons and place it in the middle of the container/image */
 .imageContainer .btnBlack {
   position: absolute;
   top: 95%;
   left: 90%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  color: white;
+  color: black;
   font-size: 16px;
   padding: 12px 24px;
   border: solid 1px black;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .imageContainer .btnBlack:hover {
   background-color: black;
+  color: white
 }
 
-#photoLeft {
-  object-fit: cover;
-  object-position: 100% 0;
+.imageContainer .btnWhite {
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: solid 1px white;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.imageContainer .btnWhite:hover {
+  background-color: white;
+  color: black
+}
+/* Position the buttons */
+#btnLeft{
+position: absolute;
+top: 85%;
+left: 23%;
+}
+
+#btnMiddle{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  }
+
+#btnRight{
+    position: absolute;
+    top: 85%;
+    left: 70%;
+    }
+  
+
+  /* Position the text */
+  #imageContainer h2 {
+    font-size: 20px;
+  }
+
+  .imageContainer a{
+    text-decoration: none;
+    width: 400px;
+  }
+    
+  .textBlack {
+    color: black;
+  }
+  .textWhite {
+    color: white;
+  }
+#textLeft {
+  position: absolute;
+  top: 100px;
+}
+
+
+  /* Handle the images */
+
+
+#photoLeft{
+  display: block;
+  height: 80vh;
   width: auto;
-  height: 100vh;
-}
+  padding-right: 5px;
 
-#allImagesContainer {
-  margin-top: 100px;
-}
+} 
+#photoMiddle{
+  display: block;
+  height: 80vh;
+  width: auto;
+  padding-right: 5px;
+  padding-left: 5px;
+} 
+
+#photoRight{
+  display: block;
+  height: 80vh;
+  width: auto;
+  padding-left: 5px;
 
 
+} 
+=======
 /*# sourceMappingURL=style.css.map */
 
 /* login/signup modal */
@@ -197,3 +268,4 @@ input::placeholder {
   text-decoration: none;
   cursor: pointer;
 }
+
