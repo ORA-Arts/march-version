@@ -124,13 +124,13 @@ left: 23%;
 #btnRight{
     position: absolute;
     top: 85%;
-    left: 70%;
+    left: 85%;
     }
   
 
   /* Position the text */
-  #imageContainer h2 {
-    font-size: 20px;
+  .imageContainer h2 {
+    font-size: 16px;
   }
 
   .imageContainer a{
@@ -146,9 +146,19 @@ left: 23%;
   }
 #textLeft {
   position: absolute;
-  top: 100px;
+  top: 80px;
+  left: 12%;
 }
 
+#textMiddle {
+  position: absolute;
+  top: 80px;
+}
+
+#textRight {
+  position: absolute;
+  top: 80px;
+}
 
   /* Handle the images */
 
