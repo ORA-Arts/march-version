@@ -1,10 +1,78 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px;
+  font-family: 'akzidenz-grotesk_proregular'
+}
 
-a {
-  color: #00b7ff; }
+  h1 {
+    font-family: 'editorial_newregular', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    }
 
-h1 {
-  color: 15px; }
+ #navbar {
+  display: flex;
+  justify-content: space-between;
+
+}
+/* #navtitles {
+  width:100%;
+  height: 35px;
+  display: flex;
+  text-align:center;
+  align-items: flex-end;
+  justify-content: space-between;
+  list-style: none;
+}
+
+#navtitles > li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+} */
+
+#navtitles { 
+  /* margin: 150px auto 0;  */
+  padding: 0; 
+  list-style: none; 
+  display: table;
+  width: 100%;
+  text-align: center;
+  height: 35px;
+}
+#navtitles > li { 
+  display: table-cell; 
+  position: relative; 
+  padding: 15px 0;
+}
+.link {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none; 
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+}
+
+#navtitles > li > a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background:black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  margin-top:5px;
+}
+#navtitles > li > a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+
+
+
+
 
