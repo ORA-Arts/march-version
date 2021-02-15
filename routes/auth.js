@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 
 // GET login
 router.get('/login', (req, res, next) => {
-    res.render('login')
+    res.render('auth/login')
 });
 
 // POST login

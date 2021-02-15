@@ -21,7 +21,7 @@ require("./config")(app);
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session)
 
-const mongoose = require('.db/index')
+const mongoose = require('./db/index')
 
 app.use(
     session({
