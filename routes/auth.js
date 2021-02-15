@@ -23,13 +23,51 @@ router.post('/login', (req, res) => {
           // password and hash match
           // now we want to log the user in
           req.session.user = userFromDB
-          res.redirect('editorial/index')
+          res.redirect('/')
         } else {
           res.render('login', { message: 'Invalid credentials' })
         }
       })
 })
+// POST login
+router.post('/signup', (req, res) => {
+  // get username and password
+  const { email, password } = req.body;
+  console.log(email, password);
+  // is the password longer than 8 chars and the username not empty
+  if (password.length < 8) {
+    // if not show the signup again with a message
+    return res.render('signup', { message: 'Your password has to be 8 chars min' });
 
+  }
+  if (email === '') {
+    res.render('signup', { message: 'Your username cannot be empty' });
+    return
+  }
+  // check if the username already exists
+  User.findOne({ email: email })
+    .then(userFromDB => {
+      if (userFromDB !== null) {
+        // if yes show the signup again with a message
+        res.render('signup', { message: 'Username is already taken' });
+      } else {
+        // all validation passed - > we can create a new user in the database with a hashed password
+        // create salt and hash
+        const salt = bcrypt.genSaltSync();
+        const hash = bcrypt.hashSync(password, salt)
+        // create the user in the db
+        User.create({ email: email, password: hash })
+          .then(userFromDB => {
+            console.log(userFromDB);
+            // then redirect to login
+            res.redirect('/');
+          })
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 // GET logout
 router.get('/logout', (req, res) => {
     // logout() is a passport function
