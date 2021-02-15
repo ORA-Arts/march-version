@@ -70,10 +70,14 @@ router.post('/signup', (req, res) => {
 })
 // GET logout
 router.get('/logout', (req, res) => {
-    // logout() is a passport function
-    req.logout();
-    res.redirect('/')
+  req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/');
+    }
   })
+})
 
 module.exports = router
 

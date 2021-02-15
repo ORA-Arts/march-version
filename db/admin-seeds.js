@@ -19,7 +19,6 @@ const admin = [
   {
     email: 'ptrcklehmann@gmail.com',
     password: '123456seven'
-    
   }
 ]
 const salt = bcrypt.genSaltSync();

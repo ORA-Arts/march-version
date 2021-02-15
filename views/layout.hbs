@@ -21,7 +21,11 @@
             <li><a href="/collector-space" class="link">COLLECTOR SPACE</a></li>
             <li><a href="/support-an-artist-project" class="link">SUPPORT AN ARTIST PROJECT</a></li>
             <li><a href="/editorial" class="link">EDITORIAL</a></li>
-            <li><button href="/" class="link" id='openModal'>LOGIN</a></li>
+            {{#if req.session.user}}
+            <li><a href="/logout" class="link openModal">LOGOUT</a></li>
+            {{else}}
+            <li><button href="/" class="link openModal" id='openModal'>LOGIN</a></li>
+            {{/if}}
          </ul>
 
       </div>
@@ -41,7 +45,7 @@
 
                <button type="submit" value="submit">LOGIN</button>
             </form>
-            <form action="/signup" method="POST">
+            {{!-- <form action="/signup" method="POST">
                
                <input type="text" name="email" id="email" placeholder="ENTER YOUR EMAIL">
 
@@ -49,7 +53,7 @@
                <input type="password" name="password" placeholder="ENTER YOUR PASSWORD">
 
                <button type="submit" value="submit">SIGN UP</button>
-            </form>
+            </form> --}}
             {{!-- {{else}} --}}
             {{!-- <form action="/logout" method="GET">
                <button type="submit">Logout</button>
