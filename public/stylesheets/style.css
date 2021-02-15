@@ -110,23 +110,25 @@ h1 {
 }
 /* Position the buttons */
 #btnLeft{
-position: absolute;
-top: 85%;
-left: 23%;
+  width: 180px;
+position: relative;
+top: 65vh;
+left: 70%;
 }
 
 #btnMiddle{
-  position: absolute;
-  top: 85%;
-  left: 50%;
+  width: 180px;
+position: relative;
+top: 65vh;
+left: 70%;
   }
 
 #btnRight{
-    position: absolute;
-    top: 85%;
-    left: 85%;
-    }
-  
+width: 180px;
+position: relative;
+top: 65vh;
+left: 70%;
+}
 
   /* Position the text */
   .imageContainer h2 {
@@ -144,47 +146,51 @@ left: 23%;
   .textWhite {
     color: white;
   }
+
 #textLeft {
-  position: absolute;
-  top: 80px;
-  left: 12%;
+  position: relative;
+  top: 10px;
+  left: 15px;
 }
 
 #textMiddle {
-  position: absolute;
-  top: 80px;
+  position: relative;
+  top: 10px;
+  left: 15px;
 }
 
 #textRight {
-  position: absolute;
-  top: 80px;
+  position: relative;
+  top: 10px;
+  left: 15px;
 }
 
   /* Handle the images */
 
+  .imageContainer{
+    display: block;
+    height: 80vh;
+    width: 25vw;
+    max-height: 750px;
+  }
 
-#photoLeft{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-right: 5px;
+#imageLeft {
+  margin-right: 5px;
+  background-image: url('../images/HOMEPAGE 1.png');
+  max-height: 750px;
+}
 
+#imageMiddle{
+  margin-right: 5px;
+  margin-left: 5px;
+  background-image: url("../images/HOMEPAGE 2.png");
+  max-height: 750px;
 } 
-#photoMiddle{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-right: 5px;
-  padding-left: 5px;
-} 
 
-#photoRight{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-left: 5px;
-
-
+#imageRight{
+  margin-left: 5px;
+  background-image: url("../images/HOMEPAGE 3.png");
+  max-height: 750px;
 } 
 =======
 /*# sourceMappingURL=style.css.map */
