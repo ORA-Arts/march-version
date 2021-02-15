@@ -1,3 +1,8 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   font: 14px "akzidenz-grotesk_proregular"}
 
@@ -11,7 +16,7 @@ h1 {
 
  #navbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -20,7 +25,8 @@ h1 {
 #navtitles { 
   padding: 0; 
   list-style: none; 
-  display: table;
+  display: flex;
+  justify-content: space-evenly;
   width: 100%;
   text-align: center;
   height: 35px;
@@ -61,15 +67,63 @@ h1 {
   left: 0; 
 }
 
-/* HOMEPAGE */
-/* Simulation NavBar */
-.simulNavBar {
+/* FOOTER */
+#footer{
   position: fixed;
-  height: 50px;
+  bottom: 0;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 50px;
+  align-items: top;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 50px;
 }
+
+#footer h2 {
+  font-size: 14px;
+  margin: 3px 0px;
+}
+
+#footer p {
+  font-size: 10px;
+  margin: 1px 0px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+}
+
+.footerElement{
+  margin: 0 5px;
+}
+
+#footerAbout{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#followUs{
+  display: flex;
+  flex-direction: column;
+}
+
+#footerORA{
+  width: 350px;
+}
+
+/* HOMEPAGE */
 /* Main container for images */
+#indexWrap{
+  padding-top:55px;
+  padding-bottom: 0px;
+}
+
 #allImagesContainer {
-  margin-top: 70px;
+  height: 77vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,27 +169,28 @@ h1 {
 #btnLeft{
   width: 180px;
 position: relative;
-top: 65vh;
+top: 88%;
 left: 70%;
 }
 
 #btnMiddle{
   width: 180px;
 position: relative;
-top: 65vh;
+top: 88%;
 left: 70%;
   }
 
 #btnRight{
 width: 180px;
 position: relative;
-top: 65vh;
+top: 88%;
 left: 70%;
 }
 
   /* Position the text */
   .imageContainer h2 {
     font-size: 16px;
+    text-decoration: none;
   }
 
   .imageContainer a{
@@ -172,15 +227,15 @@ left: 70%;
 
   .imageContainer{
     display: block;
-    height: 80vh;
-    width: 25vw;
+    height: 77vh;
+    width: 30vw;
     max-height: 750px;
   }
 
-  .imageContainer:hover{
+  /* .imageContainer:hover{
     filter: blur(3px);
     -webkit-filter: blur(3px);
-  }
+  } */
 
   .imageContainer h2{
     visibility: visible;
