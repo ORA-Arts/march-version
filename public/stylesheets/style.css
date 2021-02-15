@@ -11,7 +11,7 @@ h1 {
 
  #navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: fixed;
   width: 100%;
   top: 0;
@@ -54,7 +54,7 @@ h1 {
   background:black;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
-  margin-top:5px;
+  margin-top:7px;
 }
 #navtitles > li > a:hover:after { 
   width: 100%; 
@@ -62,8 +62,11 @@ h1 {
 }
 
 /* HOMEPAGE */
-
-
+/* Simulation NavBar */
+.simulNavBar {
+  position: fixed;
+  height: 50px;
+}
 /* Main container for images */
 #allImagesContainer {
   margin-top: 70px;
@@ -173,6 +176,16 @@ left: 70%;
     width: 25vw;
     max-height: 750px;
   }
+
+  .imageContainer:hover{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  }
+
+  .imageContainer h2{
+    visibility: visible;
+  }
+
 
 #imageLeft {
   margin-right: 5px;
