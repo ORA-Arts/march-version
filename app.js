@@ -40,14 +40,11 @@ const session = require('express-session');
 // session store using mongo
 const MongoStore = require('connect-mongo')(session)
 
-
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
         cookie: { maxAge: 1000 * 60 * 60 * 24 },
         saveUninitialized: false,
-        //Forces the session to be saved back to the session store, 
-        // even if the session was never modified during the request.
         resave: true,
         store: new MongoStore({
             mongooseConnection: mongoose.connection
@@ -62,6 +59,8 @@ const projectName = "march-version";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
+app.locals.session = true
+console.log(app.locals)
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
