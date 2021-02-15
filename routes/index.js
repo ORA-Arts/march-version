@@ -1,6 +1,5 @@
 const router = require("express").Router();
 
-
 // GET HomePage
 router.get('/', (req, res, next) => {
   res.render('index');

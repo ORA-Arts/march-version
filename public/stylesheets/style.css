@@ -38,6 +38,10 @@ h1 {
   position: relative;
   font-size: 14px;
 }
+#openModal {
+  background: none;
+  border: none;
+}
 
 #navtitles > li > a:after {    
   background: none repeat scroll 0 0 transparent;
@@ -170,4 +174,98 @@ left: 23%;
   width: auto;
   padding-left: 5px;
 
+
 } 
+=======
+/*# sourceMappingURL=style.css.map */
+
+/* login/signup modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid black;
+  width: 400px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+    
+}
+.modal-content span {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: flex-end;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: auto;
+  height: 300px;
+}
+.modal-content form input {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 340px;
+  height: 35px;
+  border-radius: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  
+}
+input::placeholder {
+  color: #000;
+}
+.modal-content form button {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 140px;
+  height: 35px;
+  border-radius: 0;
+  background: #000000;
+  color: #FFF;
+  
+}
+/* The Close Button */
+.close {
+  padding-right: 0.5rem;
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+

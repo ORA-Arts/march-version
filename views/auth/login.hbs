@@ -1,0 +1,24 @@
+<!-- Trigger/Open The Modal -->
+<button id="openModal">Login</button>
+
+<div id="loginModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    {{#if session}}
+     <form action="/login" method="POST">
+        <label for="email">Username:</label>
+        <input type="text" name="email" id="email">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+
+        <button type="submit" value="submit">Log In</button>
+    </form>
+    {{else}}
+    <form action="/logout" method="GET">
+        <button type="submit">Logout</button>
+    </form>
+    {{/if}}
+  </div>
+</div>
