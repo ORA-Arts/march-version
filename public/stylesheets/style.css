@@ -1,11 +1,104 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00b7ff; }
+  font: 14px;
+  font-family: 'akzidenz-grotesk_proregular'
+}
 
 h1 {
-  color: 15px; }
+    font-family: 'editorial_newregular', Arial, sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    }
 
-/*# sourceMappingURL=style.css.map */
+/* NAVBAR */
+
+ #navbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+#navtitles { 
+  padding: 0; 
+  list-style: none; 
+  display: table;
+  width: 100%;
+  text-align: center;
+  height: 35px;
+}
+#navtitles > li { 
+  display: table-cell; 
+  position: relative; 
+  padding: 15px 0;
+}
+.link {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none; 
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+}
+
+#navtitles > li > a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background:black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  margin-top:5px;
+}
+#navtitles > li > a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+/* HOMEPAGE */
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.imageContainer .btnBlack {
+  position: absolute;
+  top: 95%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: solid 1px black;
+  cursor: pointer;
+}
+
+.imageContainer .btnBlack:hover {
+  background-color: black;
+}
+
+#photoLeft {
+  object-fit: cover;
+  object-position: 100% 0;
+  width: auto;
+  height: 100vh;
+}
+
+#allImagesContainer {
+  margin-top: 100px;
+}
+
+

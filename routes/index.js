@@ -12,7 +12,7 @@ router.get('/what-is-ora', (req, res, next) => {
 });
 
 // GET Artist Open Call
-router.get('/artist-open-calls', (req, res, next) => {
+router.get('/artist-open-call', (req, res, next) => {
   res.render('artist');
 });
 
