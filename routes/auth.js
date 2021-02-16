@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
           // password and hash match
           // now we want to log the user in
           req.session.user = userFromDB
-          res.redirect('/')
+          res.redirect('/', { login : true })
         } else {
           res.render('login', { message: 'Invalid credentials' })
         }
@@ -72,7 +72,7 @@ router.post('/signup', (req, res) => {
 router.get('/logout', (req, res) => {
     // logout() is a passport function
     req.logout();
-    res.redirect('/')
+    res.redirect('/', {login: false})
   })
 
 module.exports = router

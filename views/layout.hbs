@@ -21,7 +21,13 @@
             <li><a href="/collector-space" class="link">COLLECTOR SPACE</a></li>
             <li><a href="/support-an-artist-project" class="link">SUPPORT AN ARTIST PROJECT</a></li>
             <li><a href="/editorial" class="link">EDITORIAL</a></li>
-            <li><button href="/" class="link" id='openModal'>LOGIN</a></li>
+            <li>
+               {{#if login}}
+               <a href="/" class="link" id='openModal'>LOGIN</a>
+               {{else}}
+               <a href="/logout" class="link">LOGOUT</a>
+               {{/if}}
+            </li>
          </ul>
 
       </div>
