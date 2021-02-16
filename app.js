@@ -1,7 +1,7 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require("dotenv/config");
-
+const User = require('./models/User.model')
 // ℹ️ Connects to the database
 require("./db");
 
@@ -14,8 +14,7 @@ const express = require("express");
 const hbs = require("hbs");
 
 const app = express();
-
-const cookieParser = require('cookie-parser');
+bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
@@ -23,11 +22,39 @@ const favicon = require('serve-favicon');
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require("./config")(app);
 
+//Authentication Packages
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session)
+const passport = require('passport') 
+const LocalStrategy = require('passport-local').Strategy
+
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    },
+    function(username, password, done) {
+      User.findOne({ username: username }, function (err, user) {
+        if (err) { return done(err); }
+        if (!user) {
+          return done(null, false, { message: 'Incorrect email.' });
+        }
+        if (!user.validPassword(password)) {
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, user);
+      });
+    }
+));
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // Express View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,17 +64,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 //set login variable
 app.use(function(req, res, next) {
-    res.locals.isAuthenticated = (req.body) ? true : false
+    res.locals.isAuthenticated = req.isAuthenticated()
     console.log(req.body.user)
     console.log(res.locals.isAuthenticated)
     next()
 })
-hbs.localsAsTemplateData(app);
 
-// session configuration
-const session = require('express-session');
-// session store using mongo
-const MongoStore = require('connect-mongo')(session)
+hbs.localsAsTemplateData(app);
 
 app.use(
     session({
@@ -60,8 +83,17 @@ app.use(
         })
     })
 )
-// end of session configuration
 
+// end of session configuration
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+  
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    });
+});
 
 // default value for title local
 const projectName = "march-version";
