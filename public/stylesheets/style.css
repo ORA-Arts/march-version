@@ -304,9 +304,9 @@ left: 75%;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: center;
-  align-items: center;
-    
+  align-items: center; 
 }
+
 .modal-content span {
   order: 0;
   flex: 0 1 auto;
@@ -334,8 +334,8 @@ left: 75%;
   font-size: 16px;
   line-height: 21px;
   text-align: center;
-  
 }
+
 input::placeholder {
   color: #000;
 }
@@ -364,6 +364,28 @@ input::placeholder {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* PopUp */
+.popUp {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid black;
+  width: 560px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center; 
+  justify-content:space-between;
+}
+.popUp span {
+  align-self: flex-end;
+}
+
+.popUp p {
+  padding-bottom: 20%;
 }
 
 /* Contact Form */
@@ -467,7 +489,7 @@ input::placeholder {
 }
 
 #selectTopic input[type="radio"]:focus + label {
-  border: 2px dashed #444;
+  border: 2px solid black;
 }
 
 #selectTopic label:hover {
@@ -486,5 +508,5 @@ input::placeholder {
 
 #inquireAndButton .btnWhite:hover {
   background-color: white;
-  color: black
-}
+  color: black;
+  border: 2px solid black;

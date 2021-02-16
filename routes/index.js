@@ -100,7 +100,7 @@ router.post("/contact-us", (req, res) => {
     transporter.sendMail(mail, (err, data) => {
       if (err) {
         console.log(err);
-        // res.status(500).send("Something went wrong.");
+         res.status(500).send("Something went wrong.");
       } else {
         console.log("Email successfully sent to recipient!");
       }
