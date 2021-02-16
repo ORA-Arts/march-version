@@ -123,7 +123,7 @@ h1 {
 
 /* HOMEPAGE */
 /* Main container for images */
-#indexWrap{
+.indexWrap{
   padding-top:55px;
   padding-bottom: 0px;
 }
@@ -358,3 +358,38 @@ input::placeholder {
   cursor: pointer;
 }
 
+/* Contact Form */
+
+#contactContainer{
+  display: flex;
+}
+
+#contactImage {
+  background-image: url('../images/CONTACT FORM 1.jpg');
+  background-position: center;
+  max-height: 750px;
+  display: block;
+  height: 77vh;
+  width: 45vw;
+  margin-left: 20px;
+}
+#h1Wrapper a{
+  text-decoration: none;
+  color: black;
+  font-family: akzidenz-grotesk_proregular;
+  font-size: 20px;
+}
+
+#formContainer h2{
+  font-family: 'editorial_newregular', sans-serif;
+
+}
+
+
+#formContainer{
+  margin-left: 2vw;
+}
+
+#emailAndName {
+
+}

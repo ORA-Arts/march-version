@@ -33,3 +33,40 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// //Newsletter MODAL
+const popUpNewsletter=document.getElementById('newsletterModal')
+const btnNewsletter = document.getElementById('submitBtn')
+
+btnNewsletter.onclick(){
+  popUpNewsletter.style.display ="block"
+}
+
+// Contact Form
+//get the form by its id
+//https://lo-victoria.com/how-to-build-a-contact-form-with-javascript-and-nodemailer
+const form = document.getElementById("contact-form"); 
+
+
+//1.
+const formEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+    //2.
+    let mail = new FormData(form);
+
+    //3.
+    sendMail(mail);
+
+    const sendMail = (mail) => {
+      //1.
+      fetch("http://localhost:3000/contact-us", {
+        method: "post", //2.
+        body: mail, //3.
+    
+      }).then((response) => {
+        return response.json();
+      });
+    };
+
+
