@@ -1,3 +1,8 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   font: 14px "akzidenz-grotesk_proregular"}
 
@@ -11,7 +16,7 @@ h1 {
 
  #navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -20,7 +25,8 @@ h1 {
 #navtitles { 
   padding: 0; 
   list-style: none; 
-  display: table;
+  display: flex;
+  justify-content: space-evenly;
   width: 100%;
   text-align: center;
   height: 35px;
@@ -54,19 +60,76 @@ h1 {
   background:black;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
-  margin-top:5px;
+  margin-top:7px;
 }
 #navtitles > li > a:hover:after { 
   width: 100%; 
   left: 0; 
 }
 
+/* FOOTER */
+#footer{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 50px;
+  align-items: top;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 50px;
+}
+
+#footer h2 {
+  font-size: 14px;
+  margin: 3px 0px;
+}
+
+#footer p {
+  font-size: 12px;
+  margin: 1px 0px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+.footerElement{
+  margin: 0 5px;
+}
+
+#footerAbout{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#newsletter button{
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+#followUs{
+  display: flex;
+  flex-direction: column;
+}
+
+#footerORA{
+  width: 350px;
+}
+
 /* HOMEPAGE */
-
-
 /* Main container for images */
+#indexWrap{
+  padding-top:55px;
+  padding-bottom: 0px;
+}
+
 #allImagesContainer {
-  margin-top: 70px;
+  height: 77vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,27 +173,30 @@ h1 {
 }
 /* Position the buttons */
 #btnLeft{
-position: absolute;
+  width: 160px;
+position: relative;
 top: 85%;
-left: 23%;
+left: 75%;
 }
 
 #btnMiddle{
-  position: absolute;
-  top: 85%;
-  left: 50%;
+  width: 160px;
+position: relative;
+top: 85%;
+left: 75%;
   }
 
 #btnRight{
-    position: absolute;
-    top: 85%;
-    left: 70%;
-    }
-  
+width: 160px;
+position: relative;
+top: 85%;
+left: 75%;
+}
 
   /* Position the text */
-  #imageContainer h2 {
-    font-size: 20px;
+  .imageContainer h2 {
+    font-size: 16px;
+    text-decoration: none;
   }
 
   .imageContainer a{
@@ -144,37 +210,61 @@ left: 23%;
   .textWhite {
     color: white;
   }
+
 #textLeft {
-  position: absolute;
-  top: 100px;
+  position: relative;
+  top: 10px;
+  left: 15px;
 }
 
+#textMiddle {
+  position: relative;
+  top: 10px;
+  left: 15px;
+}
+
+#textRight {
+  position: relative;
+  top: 10px;
+  left: 15px;
+}
 
   /* Handle the images */
 
+  .imageContainer{
+    display: block;
+    height: 77vh;
+    width: 30vw;
+    max-height: 750px;
+  }
 
-#photoLeft{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-right: 5px;
+  /* .imageContainer:hover{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  } */
 
+  .imageContainer h2{
+    visibility: visible;
+  }
+
+
+#imageLeft {
+  margin-right: 5px;
+  background-image: url('../images/HOMEPAGE 1.png');
+  max-height: 750px;
+}
+
+#imageMiddle{
+  margin-right: 5px;
+  margin-left: 5px;
+  background-image: url("../images/HOMEPAGE 2.png");
+  max-height: 750px;
 } 
-#photoMiddle{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-right: 5px;
-  padding-left: 5px;
-} 
 
-#photoRight{
-  display: block;
-  height: 80vh;
-  width: auto;
-  padding-left: 5px;
-
-
+#imageRight{
+  margin-left: 5px;
+  background-image: url("../images/HOMEPAGE 3.png");
+  max-height: 750px;
 } 
 /*# sourceMappingURL=style.css.map */
 
