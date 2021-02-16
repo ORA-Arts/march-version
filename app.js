@@ -35,6 +35,15 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+//set login variable
+app.use(function(req, res, next) {
+    res.locals.isAuthenticated = (req.body) ? true : false
+    console.log(req.body.user)
+    console.log(res.locals.isAuthenticated)
+    next()
+})
+hbs.localsAsTemplateData(app);
+
 // session configuration
 const session = require('express-session');
 // session store using mongo
@@ -59,7 +68,6 @@ const projectName = "march-version";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
-app.locals.session = true
 console.log(app.locals)
 
 // 👇 Start handling routes here
