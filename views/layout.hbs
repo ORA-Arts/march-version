@@ -22,42 +22,28 @@
             <li><a href="/collector-space" class="link">COLLECTOR SPACE</a></li>
             <li><a href="/support-an-artist-project" class="link">SUPPORT AN ARTIST PROJECT</a></li>
             <li><a href="/editorial" class="link">EDITORIAL</a></li>
-            {{#if req.session.user}}
-            <li><a href="/logout" class="link openModal">LOGOUT</a></li>
-            {{else}}
-            <li><a href="/" class="link openModal" id='openModal'>LOGIN</a></li>
-            {{/if}}
+            <li>
+               {{#if isAuthenticated}}
+               <a href="/logout" class="link">LOGOUT</a>
+               {{else}}
+               <a href="#" class="link" id='openModal'>LOGIN</a>
+               {{/if}}
+            </li>
          </ul>
       </nav>
 
       {{{body}}}
-      {{!-- <div id="loginModal" class="modal">
+      <div id="loginModal" class="modal">
          <!-- Modal content -->
          <div class="modal-content">
             <span class="close">&times;</span>
-            {{!-- {{#if session}} --}}
-            {{!-- <form action="/login" method="POST">
+            <form action="/login" method="POST">
                <input type="text" name="email" id="email" placeholder="ENTER YOUR EMAIL">
                <input type="password" name="password" placeholder="ENTER YOUR PASSWORD">
                <button type="submit" value="submit">LOGIN</button>
-
-            </form> --}}
-            {{!-- <form action="/signup" method="POST">
-               
-               <input type="text" name="email" id="email" placeholder="ENTER YOUR EMAIL">
-
-               
-               <input type="password" name="password" placeholder="ENTER YOUR PASSWORD">
-
-               <button type="submit" value="submit">SIGN UP</button>
-            </form> --}}
-            {{!-- {{else}} --}}
-            {{!-- <form action="/logout" method="GET">
-               <button type="submit">Logout</button>
-            </form> --}}
-            {{!-- {{/if}} --}}
-         {{!-- </div>
-      </div> --}}
+            </form>
+         </div>
+      </div>
       <script src="/js/script.js"></script>
 
       <div id="newsletterModal" class="modal">
@@ -95,9 +81,6 @@
             <h2>LEGAL</h2>
             <a href="/privacy-policy">PRIVACY POLICY</a>
             <p>ALL RIGHT RESERVED <br> © ORA 2021</p>
-
-            </form>
-
          </div>
       </footer>
       </div>
