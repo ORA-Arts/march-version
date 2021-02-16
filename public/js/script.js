@@ -35,18 +35,17 @@ window.onclick = function(event) {
 }
 
 // //Newsletter MODAL
-const popUpNewsletter=document.getElementById('newsletterModal')
-const btnNewsletter = document.getElementById('submitBtn')
+// const popUpNewsletter=document.getElementById('newsletterModal')
+// const btnNewsletter = document.getElementById('submitBtn')
 
-btnNewsletter.onclick(){
-  popUpNewsletter.style.display ="block"
-}
+// btnNewsletter.onclick(){
+//   popUpNewsletter.style.display ="block"
+// }
 
 // Contact Form
 //get the form by its id
 //https://lo-victoria.com/how-to-build-a-contact-form-with-javascript-and-nodemailer
 const form = document.getElementById("contact-form"); 
-
 
 //1.
 const formEvent = form.addEventListener("submit", (event) => {
@@ -68,5 +67,5 @@ const formEvent = form.addEventListener("submit", (event) => {
         return response.json();
       });
     };
-
+  });
 

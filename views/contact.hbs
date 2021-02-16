@@ -9,30 +9,25 @@
             <h2>GET IN TOUCH WITH OUR TEAM REGARDING ANY QUESTIONS YOU MIGHT HAVE WITH OUR ACTIVITIES</h2>
             <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form">
                 <div id="emailAndName">
-                <input type="text" name="name" id="name" placeholder="ENTER YOUR NAME">
-                <input type="email" name="email" id="email" placeholder="ENTER YOUR EMAIL">
+                    <input type="text" name="name" id="name" placeholder="NAME">
+                    <input type="email" name="email" id="email" placeholder="EMAIL">
+                    <p>TOPIC</p>
                 </div>
-                <label class="option">
-                    <div>
-                        <label class="option">
-                            <input type="radio" name="object" value="SUPPORT AN ARTIST PROJECT">
-                            <span>SUPPORT AN ARTIST PROJECT</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="object" value="PERSONAL ADVISOR">
-                            <span>PERSONAL ADVISOR</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="object" value="SPECIAL SOURCING">
-                            <span>SPECIAL SOURCING</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="object" value="ARTIST OPEN CALL">
-                            <span>ARTIST OPEN CALL</span>
-                        </label>
-                    </div>
-                    <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT">
-                    <button type="submit" value="submit">SUBMIT</button>
+                <div id="selectTopic">
+                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT">
+                    <label for="support">SUPPORT AN ARTIST PROJECT</label>
+
+                    <input type="radio" id="advisory" name="object" value="PERSONAL ADVISOR">
+                    <label for="advisory">PERSONAL ADVISOR</label>
+                    
+                    <input type="radio" id="sourcing" name="object" value="SPECIAL SOURCING">
+                    <label for="sourcing">SPECIAL SOURCING</label>
+                    
+                    <input type="radio" id="openCall" name="object" value="ARTIST OPEN CALL">
+                    <label for="openCall">ARTIST OPEN CALL</label>
+                </div>
+                <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT">
+                <button type="submit" value="submit">SUBMIT</button>
             </form>
         </div>
         <div id="contactFormModal" class="modal">
