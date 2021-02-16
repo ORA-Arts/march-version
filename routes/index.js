@@ -1,5 +1,7 @@
 const Newsletter = require("../models/Newsletter.model");
-
+const nodemailer = require("nodemailer");
+const multiparty = require("multiparty");
+require("dotenv").config();
 const router = require("express").Router();
 
 // GET HomePage
@@ -50,9 +52,29 @@ router.post('/', (req,res,next) => {
   })
   .then(email => {
     console.log('this email was added to the DB', email)
-    
   })
 })
+
+
+// Contact Form 
+const transporter = nodemailer.createTransport({
+  host: "smtp.live.com", //replace with your email provider
+  port: 587,
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+  },
+});
+
+// verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
+
 
 
 module.exports = router;
