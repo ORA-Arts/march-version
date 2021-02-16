@@ -18,7 +18,7 @@ var btn = document.getElementById("openModal");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+btn.onclick = function() { 
   modal.style.display = "block";
 }
 
@@ -35,37 +35,67 @@ window.onclick = function(event) {
 }
 
 // //Newsletter MODAL
-// const popUpNewsletter=document.getElementById('newsletterModal')
-// const btnNewsletter = document.getElementById('submitBtn')
+const popUpNewsletter = document.getElementById('newsletterModal');
+const btnNewsletter = document.getElementById('submitBtn');
 
-// btnNewsletter.onclick(){
-//   popUpNewsletter.style.display ="block"
-// }
+const span1 = document.getElementById("closeNL");
+
+ btnNewsletter.onclick = function() {
+  const input = document.getElementById('email');
+  popUpNewsletter.style.display = "block";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == popUpNewsletter) {
+    popUpNewsletter.style.display = "none";
+  }
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function(event) {
+  popUpNewsletter.style.display = "none";
+}
 
 // Contact Form
 //get the form by its id
 //https://lo-victoria.com/how-to-build-a-contact-form-with-javascript-and-nodemailer
 const form = document.getElementById("contact-form"); 
+const popUpContact = document.getElementById('contactFormModal');
+const span2 = document.getElementById("closeCF");
+console.log(span2)
+
+const sendMail = (mail) => {
+  //1.
+  fetch("http://localhost:3000/contact-us", {
+    method: "post", //2.
+    body: mail, //3.
+    
+  }).then((response) => {
+    return response.json();
+  });
+};
+
 
 //1.
 const formEvent = form.addEventListener("submit", (event) => {
   event.preventDefault();
+  //2.
+  let mail = new FormData(form);
+  //3.
+  sendMail(mail);
+  popUpContact.style.display = "block";
+})
 
-    //2.
-    let mail = new FormData(form);
 
-    //3.
-    sendMail(mail);
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == popUpContact) {
+    popUpContact.style.display = "none";
+  }
+}
 
-    const sendMail = (mail) => {
-      //1.
-      fetch("http://localhost:3000/contact-us", {
-        method: "post", //2.
-        body: mail, //3.
-    
-      }).then((response) => {
-        return response.json();
-      });
-    };
-  });
-
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function(event) {
+  popUpContact.style.display = "none";
+}
