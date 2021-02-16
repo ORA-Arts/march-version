@@ -1,5 +1,6 @@
-const router = require("express").Router();
+const Newsletter = require("../models/Newsletter.model");
 
+const router = require("express").Router();
 
 // GET HomePage
 router.get('/', (req, res, next) => {
@@ -41,6 +42,17 @@ router.get('/privacy-policy', (req, res, next) => {
   res.render('privacy');
 });
 
+//POST Layout Newsletter
+router.post('/', (req,res,next) => {
+  const email = req.body.email
+  Newsletter.create({
+    email: email
+  })
+  .then(email => {
+    console.log('this email was added to the DB', email)
+    
+  })
+})
 
 
 module.exports = router;

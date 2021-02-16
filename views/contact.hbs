@@ -1,0 +1,39 @@
+<div id="contactWrap">
+<div id="contactImage">
+</div>
+<div id="formContainer">
+    <div id="h1Wrapper">
+        <a href="/contact-us">
+            <h1>Contact Us</h1>
+        </a>
+        <p>/</p>
+    </div>
+    <form action="/contact-us" method="POST" action="send" enctype = "multipart/form-data">
+        <input type="text" name="name" id="name" value="{{name}}" placeholder="ENTER YOUR NAME">
+        <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL">
+        <label class="option">
+<div>
+    <!-- You can toggle select (disabled) -->
+    <label class="option">
+        <input type="radio" name="support" value="support">
+        <span>SUPPORT AN ARTIST PROJECT</span>
+    </label>
+    <label class="option">
+        <input type="radio" name="advisor" value="advisor">
+        <span>PERSONAL ADVISOR</span>
+    </label>
+    <label class="option">
+        <input type="radio" name="sourcing" value="sourcing">
+        <span>SPECIAL SOURCING</span>
+    </label>
+    <label class="option">
+        <input type="radio" name="option" value="open">
+        <span>ARTIST OPEN CALL</span>
+    </label>
+</div>
+<input type="text" name="body" id="body" value="{{body}}" placeholder="INQUIRE ABOUT">
+        <button type="submit">SUBMIT</button>
+    </form>
+</div>
+
+</div>

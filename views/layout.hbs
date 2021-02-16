@@ -11,6 +11,7 @@
    </head>
 
    <body>
+      <div id="page-container">
       <div id="navbar">
          <a href="/">
             <img src="./images/LOGO 1.png" alt="ORA" width="100" height="50">
@@ -22,10 +23,10 @@
             <li><a href="/support-an-artist-project" class="link">SUPPORT AN ARTIST PROJECT</a></li>
             <li><a href="/editorial" class="link">EDITORIAL</a></li>
             <li>
-               {{#if login}}
-               <a href="/" class="link" id='openModal'>LOGIN</a>
-               {{else}}
+               {{#if isAuthenticated}}
                <a href="/logout" class="link">LOGOUT</a>
+               {{else}}
+               <a href="#" class="link" id='openModal'>LOGIN</a>
                {{/if}}
             </li>
          </ul>
@@ -37,33 +38,45 @@
          <!-- Modal content -->
          <div class="modal-content">
             <span class="close">&times;</span>
-            {{!-- {{#if session}} --}}
             <form action="/login" method="POST">
-               
                <input type="text" name="email" id="email" placeholder="ENTER YOUR EMAIL">
-
-               
                <input type="password" name="password" placeholder="ENTER YOUR PASSWORD">
-
                <button type="submit" value="submit">LOGIN</button>
             </form>
-            <form action="/signup" method="POST">
-               
-               <input type="text" name="email" id="email" placeholder="ENTER YOUR EMAIL">
-
-               
-               <input type="password" name="password" placeholder="ENTER YOUR PASSWORD">
-
-               <button type="submit" value="submit">SIGN UP</button>
-            </form>
-            {{!-- {{else}} --}}
-            {{!-- <form action="/logout" method="GET">
-               <button type="submit">Logout</button>
-            </form> --}}
-            {{!-- {{/if}} --}}
          </div>
       </div>
       <script src="/js/script.js"></script>
-   </body>
 
+      <div id="footer">
+         <div class="footerElement" id="footerAbout">
+            <h2>ABOUT</h2>
+            <a href="/what-is-ora">WHAT IS ORA</a>
+            <a href="/contact-us">CONTACT</a>
+         </div>
+         <div class="footerElement" id="followUs">
+            <h2>FOLLOW US</h2>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">FACEBOOK</a>
+         </div>
+         <div class="footerElement" id="newsletter">
+            <h2>NEWSLETTER</h2>
+            <form action="/" method="POST">
+            <input type="text" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL">
+            <button type="submit">SUBMIT</button>
+            </form>
+         </div>
+         <div class="footerElement" id="footerORA">
+            <h2>ORA</h2>
+            <p>ORA is the only platform connecting artists, curators, institutions, galleries and collectors around a <span style="font-weight:bold">cooperative system.</span></p>
+         </div>
+         <div class="footerElement" id="legal">
+            <h2>LEGAL</h2>
+            <a href="/privacy-policy">PRIVACY POLICY</a>
+            <p>ALL RIGHT RESERVED <br> © ORA 2021</p>
+            </form>
+
+         </div>
+      </div>
+      </div>
+   </body>
 </html>

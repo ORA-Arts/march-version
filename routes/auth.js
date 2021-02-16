@@ -2,6 +2,7 @@ const router = require("express").Router()
 const User = require('../models/User.model')
 const bcrypt = require('bcrypt')
 
+
 // GET login
 router.get('/login', (req, res, next) => {
     res.render('auth/login')
@@ -15,17 +16,17 @@ router.post('/login', (req, res) => {
       .then(userFromDB => {
         if (userFromDB === null) {
           // if not we show login again
-          res.render('login', { message: 'Invalid credentials' })
+          res.render('/', { message: 'Invalid credentials' })
           return;
         }
         // if username is existing then we want to check the password
         if (bcrypt.compareSync(password, userFromDB.password)) {
           // password and hash match
           // now we want to log the user in
-          req.session.user = userFromDB
-          res.redirect('/', { login : true })
+          console.log(res.locals.logged)
+          res.redirect('/')
         } else {
-          res.render('login', { message: 'Invalid credentials' })
+          res.render('/', { message: 'Invalid credentials' })
         }
       })
 })
@@ -70,10 +71,16 @@ router.post('/signup', (req, res) => {
 })
 // GET logout
 router.get('/logout', (req, res) => {
-    // logout() is a passport function
-    req.logout();
-    res.redirect('/', {login: false})
+    req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      
+      console.log(res.locals.logged)
+      res.redirect('/');
+    }
   })
+})
 
 module.exports = router
 
