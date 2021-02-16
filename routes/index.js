@@ -88,6 +88,8 @@ router.post("/contact-us", (req, res) => {
     //2. You can configure the object however you want
     const mail = {
       from: data.name,
+      sender: data.email,
+      replyTo: data.email,
       to: process.env.EMAIL,
       subject: data.object,
       text: `${data.name} <${data.email}> \n${data.body}`,
