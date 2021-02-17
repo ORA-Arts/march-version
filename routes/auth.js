@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
           // password and hash match
           // now we want to log the user in
           req.session.user = userFromDB
-          res.redirect('/')
+          res.redirect('/editorial')
         } else {
           res.render('login', { message: 'Invalid credentials' })
         }
