@@ -76,7 +76,7 @@ h1 {
 
 /* FOOTER */
 #footer{
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   display: flex;
   margin-top: 10px;
