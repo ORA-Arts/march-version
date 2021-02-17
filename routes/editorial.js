@@ -4,7 +4,11 @@ const { uploader, cloudinary } = require('../config/cloudinary');
 const { findById } = require("../models/Editorial.model");
 // add edit delete view Editorial view
 // GET editorial
-
+const loginCheck = () => {
+    return (req, res, next) => {
+      (req.isAuthenticated()) ? next() : res.redirect('/login');
+    }
+}
 router.get('/editorial', (req, res, next) => {
     Editorial.find()
         .then(posts => {
@@ -16,7 +20,7 @@ router.get('/editorial', (req, res, next) => {
         })
 })
 
-router.get('/editorial/new', (req, res, next) => {
+router.get('/editorial/new', loginCheck(), (req, res, next) => {
     res.render('editorial/new')
 })
 
@@ -37,7 +41,7 @@ router.post('/editorial/new', uploader.single('photo'), (req, res, next) => {
         })
 })
 
-router.get('/:id/edit', (req, res, next) => {
+router.get('/:id/edit', loginCheck(), (req, res, next) => {
     Editorial.findById(req.params.id)
         .then(post => {
             res.render('editorial/edit', { post })
@@ -82,7 +86,7 @@ router.put('/:id/edit', uploader.single('photo'), (req, res, next) => {
     });
 })
 
-router.get('/editorial/:id/delete/', (req, res, next) => {
+router.get('/editorial/:id/delete/', loginCheck(), (req, res, next) => {
     Editorial.findByIdAndDelete(req.params.id)
         .then(post => {
             (post.imgPath) && cloudinary.uploader.destroy(post.publicId)
@@ -103,7 +107,5 @@ router.get('/view/:id', (req, res, next) => {
         next(err);
       });
 });
-  
-
 
 module.exports = router;

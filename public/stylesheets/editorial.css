@@ -45,17 +45,22 @@
     background-color: black;
     color: white
 }
-
 .emphasis {
     color: white;
 }
+.emphasis a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
 .emphasis h2 {
     font-size: 30px;
     font-weight: 500;
 }
 .emphasis h2 span {
     font-family: 'editorial_newregular';
-    font-weight: normal;
+    
     
 }
 .emphasis .subtitle {
