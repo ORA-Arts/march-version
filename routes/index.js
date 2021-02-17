@@ -1,8 +1,10 @@
 const Newsletter = require("../models/Newsletter.model");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
+const validator = require("email-validator");
 require("dotenv").config();
 const router = require("express").Router();
+
 
 // GET HomePage
 router.get('/', (req, res, next) => {
@@ -47,11 +49,23 @@ router.get('/privacy-policy', (req, res, next) => {
 //POST Layout Newsletter
 router.post('/', (req,res,next) => {
   const email = req.body.email
-  Newsletter.create({
+  Newsletter.findOne({
     email: email
   })
-  .then(email => {
-    console.log('this email was added to the DB', email)
+  .then(found => {
+    if (found !== null) {
+      console.log('already there')
+      res.render('index', {header: 'THANKS AGAIN BUT', message:'WE ALREADY HAVE YOUR EMAIL'});
+    }
+    else {
+      Newsletter.create({
+        email: email
+      })
+      .then(email => {
+        console.log('this email was added to the DB', email)
+        res.render('index', {header: 'THANKS', message:'YOUR EMAIL WAS ADDED TO THE NEWSLETTER'});
+      })
+    }
   })
 })
 
