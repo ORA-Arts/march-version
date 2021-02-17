@@ -29,10 +29,10 @@ router.get('/support-an-artist-project', (req, res, next) => {
   res.render('support/index');
 });
 
-// GET Support An Artist Project Child Page
-router.get('/support-an-artist-project/miles-greenberg', (req, res, next) => {
-  res.render('support/greenberg');
-});
+// // GET Support An Artist Project Child Page
+// router.get('/support-an-artist-project/miles-greenberg', (req, res, next) => {
+//   res.render('support/greenberg');
+// });
 
 // GET Contact Us
 router.get('/contact-us', (req, res, next) => {
