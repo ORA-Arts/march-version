@@ -1,0 +1,309 @@
+.editorialContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+}
+.focusContainer {
+    height: 560px;
+    z-index: -1;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: flex-end;
+    padding: 37px;
+}
+.controls .btnWhite {
+    color: white;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: solid 1px white;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.controls .btnWhite:hover {
+    background-color: white;
+    color: black
+}
+
+.btnBlack {
+    color: black;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: solid 1px black;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+}
+.btnBlack:hover {
+    background-color: black;
+    color: white
+}
+
+.emphasis {
+    color: white;
+}
+.emphasis h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+.emphasis h2 span {
+    font-family: 'editorial_newregular';
+    font-weight: normal;
+    
+}
+.emphasis .subtitle {
+    padding-top: 18px;
+    font-size: 14px;
+}
+
+.editorialContainer {
+    width: 100vw;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+ 
+}
+.editorialContainer .addBtn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    align-items: flex-end;
+    height: 70px;
+    padding-right: 37px;
+}
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 45%;
+    min-width: 648px;
+    padding: 20px 0 40px;
+}
+.cards {
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content:flex-start;
+    align-items: flex-start;
+    padding-bottom: 20rem;
+}
+.summaryCard {
+    width: 45%;
+    min-width: 648px;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+    margin: 20px 20px;
+    text-transform: uppercase;
+}
+.summaryCard .cardImage {
+    margin: 5px;
+    width: 49%;
+    object-fit: cover;
+}
+.cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.summaryCard .details {
+    margin: 5px;
+    width: 49%;
+}
+.category {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: inline;
+}
+.date {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 13px;
+    letter-spacing: 0em;
+    display: inline;
+    float: right;
+}
+
+.title {
+    font-family: 'editorial_newregular';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 10px 0;
+    border-top: 0.5px solid #000000;
+    border-bottom: 0.5px solid #000000;
+    margin: 10px 0 0;
+}
+.title a {
+    text-decoration: none;
+    color: #000;
+}
+.subtitle {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 5px 0;
+}
+.author {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+
+.cardFooter {
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.cardFooter .btnBlack {
+    color: black;
+    font-size: 12px;
+    padding: 8px 10px;
+    margin: 0 5px 0 5px;
+    border: solid 1px black;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+}
+.cardFooter .btnBlack:hover {
+    background-color: black;
+    color: white
+}
+
+.newPostContainer {
+    padding: 5rem 37px 5rem 37px;
+    text-transform: uppercase;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vh;
+}
+.inputs span {
+    font-size: 10px;
+    padding: 0 0 10px 0;
+
+}
+
+.inputs input{
+  border:none;
+  border-bottom: 0.5px solid grey;
+  padding: 10px 10px;
+  outline: none;
+}
+
+.inputs p {
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+.inputs textarea {
+    outline: none;
+    font-family: inherit;
+}
+
+#selectCat {
+    display: flex;
+}
+  
+#selectCat input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+  
+#selectCat label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:white;
+    padding: 3px 7px;
+    font-size: 12px;
+    border: 2px solid #444; 
+    width: 120px;
+    height: 30px;
+    margin-right: 1vw;
+}
+  
+#selectCat input[type="radio"]:checked + label {
+    background-color:black;
+    color: white;
+  }
+  
+#selectCat input[type="radio"]:focus + label {
+    border: 2px solid black;
+}
+  
+#selectCat label:hover {
+    background-color:black;
+    color: white;
+}
+
+.postContainer {
+    padding: 37px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+}
+.postContainer .text {
+    width: 50vw;
+    text-align: justify;
+    margin: auto;
+    padding-bottom: 20rem;
+}
+.postContainer .postTitle {
+    text-transform: uppercase;
+    font-family: 'editorial_newregular';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #000000;
+}

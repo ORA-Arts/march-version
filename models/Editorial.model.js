@@ -5,8 +5,33 @@ const editorialSchema = new Schema({
         type: String,
         max: 50
     },
-    Category: {
+    category: {
         type: String,
-        enum: ['Exhibitions', 'Editorial', 'News']
+        enum: ['exhibitions', 'editorial', 'news']
+    },
+    subtitle: {
+        type: String,
+        max: 150
+    },
+    text: {
+        type: String,
+        max: 3000
+    },
+    imgName: String,
+    imgPath: String,
+    publicId: String,
+
+    inFocus: Boolean,
+    author: {
+        type: String,
+        max: 50
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
+
+const Editorial = model("Editorial", editorialSchema);
+
+module.exports = Editorial;

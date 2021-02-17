@@ -40,6 +40,33 @@ router.post('/login', passport.authenticate('local', {
 //         }
 //       })
 // })
+router.post('/login', (req, res, next) => {
+    const { email, password } = req.body
+    // check if we have a user with the entered username
+    User.findOne({ email: email })
+      .then(userFromDB => {
+        if (userFromDB === null) {
+          // if not we show login again
+          res.render('/', { message: 'Invalid credentials' })
+          return;
+        }
+        // if username is existing then we want to check the password
+        if (bcrypt.compareSync(password, userFromDB.password)) {
+          // password and hash match
+          // now we want to log the user in
+          req.session.user = userFromDB
+          res.redirect('/editorial')
+          console.log(userFromDB.email)
+          req.login(userFromDB, function(err) {
+            if (err) { next(err) }
+            console.log('login succesful')
+            res.render('editorial')
+          })
+        } else {
+          res.render('/', { message: 'Invalid credentials' })
+        }
+      })
+})
 
 // POST login
 router.post('/signup', (req, res) => {

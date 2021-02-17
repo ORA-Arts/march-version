@@ -1,39 +1,43 @@
-<div id="contactWrap">
-<div id="contactImage">
-</div>
-<div id="formContainer">
-    <div id="h1Wrapper">
-        <a href="/contact-us">
-            <h1>Contact Us</h1>
-        </a>
-        <p>/</p>
-    </div>
-    <form action="/contact-us" method="POST" action="send" enctype = "multipart/form-data">
-        <input type="text" name="name" id="name" value="{{name}}" placeholder="ENTER YOUR NAME">
-        <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL">
-        <label class="option">
-<div>
-    <!-- You can toggle select (disabled) -->
-    <label class="option">
-        <input type="radio" name="support" value="support">
-        <span>SUPPORT AN ARTIST PROJECT</span>
-    </label>
-    <label class="option">
-        <input type="radio" name="advisor" value="advisor">
-        <span>PERSONAL ADVISOR</span>
-    </label>
-    <label class="option">
-        <input type="radio" name="sourcing" value="sourcing">
-        <span>SPECIAL SOURCING</span>
-    </label>
-    <label class="option">
-        <input type="radio" name="option" value="open">
-        <span>ARTIST OPEN CALL</span>
-    </label>
-</div>
-<input type="text" name="body" id="body" value="{{body}}" placeholder="INQUIRE ABOUT">
-        <button type="submit">SUBMIT</button>
-    </form>
-</div>
+<div class="indexWrap">
+    <div id="contactContainer">
+        <div id="contactImage">
+        </div>
+        <div id="formContainer">
+            <div id="h1Wrapper">
+                <h1><a href="/contact-us">CONTACT US</h1></a>
+            </div>
+            <h2>GET IN TOUCH WITH OUR TEAM REGARDING ANY QUESTIONS YOU MIGHT HAVE WITH OUR ACTIVITIES</h2>
+            <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form">
+                <div id="emailAndName">
+                    <input type="text" name="name" id="name" placeholder="NAME*">
+                    <input type="email" name="email" id="email" placeholder="EMAIL*">
+                    <p>TOPIC*</p>
+                </div>
+                <div id="selectTopic">
+                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT">
+                    <label for="support">SUPPORT AN ARTIST PROJECT</label>
 
+                    <input type="radio" id="advisory" name="object" value="PERSONAL ADVISOR">
+                    <label for="advisory">PERSONAL ADVISOR</label>
+                    
+                    <input type="radio" id="sourcing" name="object" value="SPECIAL SOURCING">
+                    <label for="sourcing">SPECIAL SOURCING</label>
+                    
+                    <input type="radio" id="openCall" name="object" value="ARTIST OPEN CALL">
+                    <label for="openCall">ARTIST OPEN CALL</label>
+                </div>
+                <div id="inquireAndButton">
+                    <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT*">
+                    <button type="submit" value="submit" class="btnWhite">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+        <div id="contactFormModal" class="modal">
+            <div class="popUp">
+                <span id="closeNL" class="close">&times;</span>
+                <h2>YOUR MESSAGE HAS BEEN SENT</h2>
+                <p>SOMEONE FROM OUR TEAM WILL GET BACK TO YOU SHORTLY</p>
+            </div>
+        </div>
+    </div>
 </div>

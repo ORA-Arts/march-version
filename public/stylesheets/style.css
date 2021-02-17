@@ -1,10 +1,17 @@
+@import 'editorial.css';
+
 #page-container {
   position: relative;
   min-height: 100vh;
 }
 
+
 body {
-  font: 14px "akzidenz-grotesk_proregular"}
+  font: 14px "akzidenz-grotesk_proregular";
+  margin: 0;
+  padding: 0;
+}
+
 
 h1 {
     font-family: 'editorial_newregular', Arial, sans-serif;
@@ -12,11 +19,21 @@ h1 {
     font-style:normal;
     }
 
+/* Placeholder disappears when clicked */
+
+[placeholder]:focus::-webkit-input-placeholder {
+  text-indent: -100%;
+  opacity: 1;
+}
+
+
 /* NAVBAR */
 
- #navbar {
+#navbar {
+  background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -26,6 +43,7 @@ h1 {
   padding: 0; 
   list-style: none; 
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   width: 100%;
   text-align: center;
@@ -36,13 +54,15 @@ h1 {
   position: relative; 
   padding: 15px 0;
 }
+
+
 .link {
   color: black;
   text-transform: uppercase;
   text-decoration: none; 
   display: inline-block;
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
 }
 #openModal {
   background: none;
@@ -70,6 +90,7 @@ h1 {
 /* FOOTER */
 #footer{
   position: fixed;
+  background-color: white;
   bottom: 0;
   display: flex;
   margin-top: 10px;
@@ -78,6 +99,7 @@ h1 {
   justify-content: space-evenly;
   width: 100%;
   min-height: 50px;
+  max-height: 80px;
 }
 
 #footer h2 {
@@ -123,9 +145,9 @@ h1 {
 
 /* HOMEPAGE */
 /* Main container for images */
-#indexWrap{
+.indexWrap{
   padding-top:55px;
-  padding-bottom: 0px;
+  padding-bottom: 60px;
 }
 
 #allImagesContainer {
@@ -296,9 +318,9 @@ left: 75%;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: center;
-  align-items: center;
-    
+  align-items: center; 
 }
+
 .modal-content span {
   order: 0;
   flex: 0 1 auto;
@@ -326,8 +348,8 @@ left: 75%;
   font-size: 16px;
   line-height: 21px;
   text-align: center;
-  
 }
+
 input::placeholder {
   color: #000;
 }
@@ -358,3 +380,425 @@ input::placeholder {
   cursor: pointer;
 }
 
+/* PopUp */
+.popUp {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid black;
+  width: 560px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center; 
+  justify-content:space-between;
+}
+.popUp span {
+  align-self: flex-end;
+}
+
+.popUp p {
+  padding-bottom: 20%;
+}
+
+/* Contact Form */
+
+#contactContainer{
+  display: flex;
+  height: 77vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#contactImage {
+  background-image: url('../images/CONTACT FORM 1.jpg');
+  background-position: center;
+  max-height: 750px;
+  display: block;
+  height: 77vh;
+  width: 45vw;
+}
+#h1Wrapper a{
+  text-decoration: none;
+  color: black;
+  font-family: 'akzidenz-grotesk_probold';
+  font-size: 16px;
+}
+
+#formContainer h2{
+  font-family: 'editorial_newregular', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+#formContainer{
+  display: block;
+  margin-left: 2vw;
+  height: 77vh;
+  width: 45vw;
+  max-height: 750px;
+}
+
+#emailAndName {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+}
+
+#emailAndName input{
+  border:none;
+  border-bottom: 0.5px solid grey;
+  padding: 10px 10px;
+  outline: none;
+}
+
+#emailAndName p{
+  padding-left: 10px;
+}
+
+#inquireAndButton{
+  display: flex;
+  flex-direction: column;
+}
+#body {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  border:none;  
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+  padding: 10px 10px;
+  padding-bottom: 25%;
+  outline: none;
+}
+
+
+#selectTopic {
+  display: flex;
+}
+
+#selectTopic input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+#selectTopic label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  background-color:white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 2px solid #444; 
+  width: 120px;
+  height: 30px;
+  margin-right: 1vw;
+}
+
+#selectTopic input[type="radio"]:checked + label {
+  background-color:black;
+  color: white;
+}
+
+#selectTopic input[type="radio"]:focus + label {
+  border: 2px solid black;
+}
+
+#selectTopic label:hover {
+  background-color:black;
+  color: white;
+}
+
+#inquireAndButton .btnWhite {
+  width: 150px;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  background-color: black;
+}
+
+#inquireAndButton .btnWhite:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+/* WHAT IS ORA */
+
+
+#section0 {
+  width: 100%;
+  height: 160px;
+  background-color: #F4F4F4;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+#section0 img{
+  display: block;
+  height: 130px;
+  width: auto;
+}
+
+#textTopAbout {
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#section0 h1 {
+  font-family: 'akzidenz-grotesk_proregular';
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#secondLine{
+  padding-left: 15px;
+}
+
+#section0 h2 {
+  font-family: 'akzidenz-grotesk_prolight';
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-left: 30px;
+}
+
+/* Generic Section */
+
+#wrapWIO{
+  padding-top:55px;
+  padding-bottom: 60px;
+}
+#wrapWIO hr{
+ width: 90vw;
+ align: center;
+}
+#section123{
+  padding-top:220px;
+}
+
+.sectionsWIO{
+  height: 380px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sideClass {
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+  padding-left: 3vw;
+}
+
+.sideClass img{
+  max-height: 380px;
+  width: 253px;
+  align-self: center;
+padding-right: 5vw;
+}
+
+.textSection {
+  width: 60vw;
+  padding-left: 3vw;
+}
+
+
+.textSection h1{
+  text-transform: uppercase;
+}
+
+.textSection a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-style: bold;
+}
+
+.sideSelector {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  max-height: 380px;
+  max-width: 150px;
+  margin: 0px;
+}
+
+.numberActivated{
+  font-size:70px;
+  margin: 0px;
+
+}
+.textActivated{
+  font-size: 13px;
+  font-family: "akzidenz-grotesk_proregular";
+  margin: 0px;
+  padding-left: 15px;
+  margin-top: -15px;
+}
+
+.numberAndText {
+  display: flex;
+  flex-direction: column;
+}
+
+.lastElement {
+  margin-bottom: 20px;
+}
+
+
+
+.numberNotActivated{
+  font-size:70px;
+  margin: 0px;
+ color: #E2E2E2;
+}
+
+.textNotActivated{
+  color: #E2E2E2;
+  font-size: 13px;
+  font-family: "akzidenz-grotesk_proregular";
+  margin: 0px;
+  padding-left: 15px;
+  margin-top: -15px;
+}
+
+/* Artist open call */
+
+#artistOpenCallWrap{
+  padding-top:130px;
+  padding-bottom: 60px;
+}
+
+#artistHeader{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5vw;
+  padding-top: 3vh;
+  padding-left: 5vw;
+  height: 50px;
+  align-items: center;
+}
+
+#artistHeader h1 {
+  font-size: 24px;
+  font-family: "akzidenz-grotesk_proregular";
+  margin: 0px;
+}
+
+#getInTouch .btnWhite{
+  width: 300px;
+  color: white;
+  font-size: 16px;
+  padding: 12px 12px;
+  cursor: pointer;
+  background-color: black;
+}
+
+#getInTouch .btnWhite:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+#artistAllSections {
+  padding-top: 10px;
+  padding-right: 5vw;
+  padding-left: 5vw;
+}
+
+#artistSection1 {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: flex;
+  align-items: flex-start;
+  width: inherit;
+}
+
+#artistSection1 img{
+  height: 480px;
+}
+
+#textHeaderArtist {
+display: flex;
+flex-direction: column;
+padding-right: 100px;
+}
+
+
+#textHeaderArtist  h1{
+font-family: 'editorial_newregular';
+font-size: 30px;
+    }
+
+ #selectionHeader h1{
+font-family: 'editorial_newregular';
+font-size: 30px;
+    }
+
+#textHeaderArtist p{
+text-align: justify;
+text-justify: inter-word;
+line-height: 25px;
+  }
+
+
+  #selectionHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lineComity {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh 3vw;
+  }
+
+  .memberComity {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .memberComity h1 {
+    font-size: 16px;
+    font-family: "akzidenz-grotesk_proregular";
+    margin: 0px;
+  }
+
+  .memberComity p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  #postSelection {
+    display: flex;
+    width: inherit;
+    margin-bottom: 10vh;
+  }
+
+
+  #postSelection img{
+    width: 40vw;
+  }
+
+  #postSelText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+
+  }
+  #postSelection p{
+    text-align: justify;
+text-justify: inter-word;
+line-height: 25px;
+  }
