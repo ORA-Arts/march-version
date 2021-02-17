@@ -11,22 +11,24 @@
     </div>
     <div class="editorialContainer">
         <div class="addBtn">
-            <button class="btnBlack">ADD NEW</button>
+            <a href="/editorial/new" class="btnBlack">ADD NEW</a>
         </div>
         <div class="cards">
+            {{#each posts}}
             <div class="summaryCard">
                 <div class="cardImage">
-                    <img src="/images/EDITORIAL 1.jpg" alt="Editorial" srcset="">
+                    <img src="{{imgPath}}" alt="{{title}}">
                 </div>
                 <div class="details">
-                    <h3 class="category">EXHIBITIONS</h3>
-                    <span class="date">12.05.2021</span>
-                    <h2 class="title">ANNE IMHOF’S CARTE BLANCHE </h2>
-                    <p class="subtitle">EXCLUSIVELY DISCOVER THE GOLDEN LION’S WINNER LAST BREAKOUT SHOW AT THE PALAIS DE TOKYO </p>
-                    <p class="author">BY RACHEL LEQUESNE </p>
+                    <h3 class="category">{{category}}</h3>
+                    <span class="date">{{formatDate date 'short'}}</span>
+                    <h2 class="title">{{title}}</h2>
+                    <p class="subtitle">{{subtitle}}</p>
+                    <p class="author">BY {{author}}</p>
                 </div>
             </div>
-            <div class="summaryCard">
+            {{/each}}
+            {{!-- <div class="summaryCard">
                 <div class="cardImage">
                     <img src="/images/EDITORIAL 2.jpg" alt="Editorial" srcset="">
                 </div>
@@ -62,6 +64,6 @@
                     <p class="subtitle">EXCLUSIVELY DISCOVER THE GOLDEN LION’S WINNER LAST BREAKOUT SHOW AT THE PALAIS DE TOKYO </p>
                     <p class="author">BY RACHEL LEQUESNE </p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>

@@ -1,0 +1,38 @@
+<div class="newPostContainer">
+    <h2>ADD NEW EDITORIAL ARTICLE</h2>
+    <form action="/editorial/new" method="POST" action="send" enctype="multipart/form-data" class="addNew">
+        <div class="inputs">
+            <input type="text" name="title" id="title" placeholder="TITLE"> <span>max 50 charts.</span>
+            <p>SELECT CATEGORY</p>
+        </div>
+        <div id="selectCat">
+            <input type="radio" id="exhibitions" name="category" value="exhibitions">
+            <label for="exhibitions">EXHIBITIONS</label>
+
+            <input type="radio" id="editorial" name="category" value="editorial">
+            <label for="editorial">EDITORIAL</label>
+
+            <input type="radio" id="news" name="category" value="news">
+            <label for="news">NEWS</label>
+        </div>
+        <div class="inputs">
+            <input type="text" name="subtitle" id="subtitle" placeholder="SUBTITLE"> <span>max 150 charts.</span>
+            <textarea name="text" id="text" placeholder="TEXT" cols="40" rows="10"></textarea> <span>max 3000 charts.</span>
+
+            <label for="photo">IMAGE: </label>
+            <input type="file" name="photo" id="photo">
+            <p>Focus article on Editorial?</p>
+        </div>
+        <div id="selectCat">
+            <input type="radio" id="true" name="inFocus" value="true">
+            <label for="true">YES</label>
+
+            <input type="radio" id="false" name="inFocus" value="false">
+            <label for="false">NO</label>
+        </div>
+        <div class="inputs">
+            <input type="text" name="author" id="author" placeholder="AUTHOR"> <span>max 50 charts.</span>
+            <button type="submit" class="btnBlack">PUBLISH ARTICLE</button>
+        </div>
+    </form>
+</div>

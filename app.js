@@ -69,6 +69,20 @@ app.use(function(req, res, next) {
     console.log(res.locals.isAuthenticated)
     next()
 })
+// set registerHelper to parse date
+const moment = require('moment') 
+const dateFormat = {
+  short: 'DD.MM.YYYY'
+}
+hbs.registerHelper('formatDate', function(datetime, format) {
+  if (moment) {
+    format = dateFormat[format] || format;
+    return moment(datetime).format(format);
+  }
+  else {
+    return datetime;
+  }
+})
 
 hbs.localsAsTemplateData(app);
 
@@ -110,6 +124,7 @@ const editorial = require("./routes/editorial");
 app.use("/", editorial);
 
 const auth = require("./routes/auth");
+const { DefaultDeserializer } = require("v8");
 app.use("/", auth);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
