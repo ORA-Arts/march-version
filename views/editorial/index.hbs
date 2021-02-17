@@ -15,16 +15,22 @@
         </div>
         <div class="cards">
             {{#each posts}}
-            <div class="summaryCard">
-                <div class="cardImage">
-                    <img src="{{imgPath}}" alt="{{title}}">
+            <div class="cardWrapper">
+                <div class="summaryCard">
+                    <div class="cardImage">
+                        <img src="{{imgPath}}" alt="{{title}}">
+                    </div>
+                    <div class="details">
+                        <h3 class="category">{{category}}</h3>
+                        <span class="date">{{formatDate date 'short'}}</span>
+                        <h2 class="title"><a href="/view/{{id}}">{{title}}</a></h2>
+                        <p class="subtitle">{{subtitle}}</p>
+                        <p class="author">BY {{author}}</p>
+                    </div>
                 </div>
-                <div class="details">
-                    <h3 class="category">{{category}}</h3>
-                    <span class="date">{{formatDate date 'short'}}</span>
-                    <h2 class="title">{{title}}</h2>
-                    <p class="subtitle">{{subtitle}}</p>
-                    <p class="author">BY {{author}}</p>
+                <div class="cardFooter">
+                    <a href="/{{_id}}/edit" class="btnBlack">EDIT POST</a>
+                     <a href="/editorial/{{_id}}/delete/" class="btnBlack">DELETE</a>
                 </div>
             </div>
             {{/each}}
