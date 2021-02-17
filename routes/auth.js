@@ -10,7 +10,7 @@ router.get('/login', (req, res, next) => {
 });
 
 // POST login
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
     const { email, password } = req.body
     // check if we have a user with the entered username
     User.findOne({ email: email })
@@ -28,8 +28,9 @@ router.post('/login', (req, res) => {
           res.redirect('/editorial')
           console.log(userFromDB.email)
           req.login(userFromDB, function(err) {
-            if (err) { return next(err) }
-            return res.redirect('/editorial')
+            if (err) { next(err) }
+            console.log('login succesful')
+            res.render('editorial')
           })
         } else {
           res.render('/', { message: 'Invalid credentials' })

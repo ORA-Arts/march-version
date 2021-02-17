@@ -69,10 +69,10 @@ router.put('/:id/edit', uploader.single('photo'), (req, res, next) => {
         text: text, 
         author: author, 
         inFocus: inFocus, 
-        imgName: imgName, imgPath: imgPath, publicId: publicId
+        imgName: imgName, 
+        imgPath: (req.file.path) ? req.file.path : prevPost.imgPath, 
+        publicId: (req.file.filename) ? req.file.filename : prevPost.publicId
     }
-    const imgPath = (req.file.path) ? req.file.path : prevPost.imgPath
-    const publicId = (req.file.filename) ? req.file.filename : prevPost.publicId
     Editorial.findByIdAndUpdate(req.params.id, postData, {new: true})
     .then(() => {
       res.redirect('/editorial');
