@@ -630,12 +630,12 @@ padding-right: 5vw;
   margin: 0px;
 }
 
-.sideSelector p{
+.numberActivated{
   font-size:70px;
   margin: 0px;
 
 }
-.sideSelector h1{
+.textActivated{
   font-size: 13px;
   font-family: "akzidenz-grotesk_proregular";
   margin: 0px;
@@ -655,14 +655,27 @@ padding-right: 5vw;
 
 
 .numberNotActivated{
+  font-size:70px;
+  margin: 0px;
  color: #E2E2E2;
 }
 
 .textNotActivated{
   color: #E2E2E2;
+  font-size: 13px;
+  font-family: "akzidenz-grotesk_proregular";
+  margin: 0px;
+  padding-left: 15px;
+  margin-top: -15px;
 }
 
 /* Artist open call */
+
+#artistOpenCallWrap{
+  padding-top:130px;
+  padding-bottom: 60px;
+}
+
 #artistHeader{
   display: flex;
   justify-content: space-between;
@@ -686,6 +699,10 @@ padding-right: 5vw;
   border: 2px solid black;
 }
 
+#artistAllSections {
+  padding-top: 10px;
+}
+
 #artistSection1 {
   display: flex;
   padding: 0% 10%;
@@ -701,8 +718,48 @@ flex-direction: column;
 padding-right: 100px;
 }
 
+
+#textHeaderArtist h2{
+font-family: 'editorial_newregular';
+font-size: 25px;
+    }
+
 #textHeaderArtist p{
 text-align: justify;
 text-justify: inter-word;
 line-height: 25px;
+  }
+
+
+  #selectionHeader{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    align-items: center;
+  }
+
+  .lineComity {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 3vw;
+  }
+
+  .memberComity {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .memberComity h1 {
+    font-size: 16px;
+    font-family: "akzidenz-grotesk_proregular";
+    margin: 0px;
+  }
+
+  .memberComity p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
   }
