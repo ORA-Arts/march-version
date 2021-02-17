@@ -45,6 +45,7 @@ const span1 = document.getElementById("closeNL");
   popUpNewsletter.style.display = "block";
 }
 
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == popUpNewsletter) {
