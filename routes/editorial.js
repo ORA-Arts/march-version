@@ -1,10 +1,11 @@
-const router = require("express").Router();
+const router = require("express").Router()
 const Editorial = require('../models/Editorial.model')
-const { uploader, cloudinary } = require('../config/cloudinary');
-const { findById } = require("../models/Editorial.model");
-// add edit delete view Editorial view
-// GET editorial
+const { uploader, cloudinary } = require('../config/cloudinary')
 
+
+// Editorial routes and CRUD functionalites
+
+// GET editorial
 router.get('/editorial', (req, res, next) => {
     Editorial.find()
         .then(posts => {
@@ -47,41 +48,40 @@ router.get('/:id/edit', (req, res, next) => {
         });
 })
 
-router.put('/:id/edit', uploader.single('photo'), (req, res, next) => {
-    
-    console.log(req.body);
-    let post = Editorial.findById(req.params.id)
-    cloudinary.uploader.destroy(post.publicId)
+//Edit post
+router.post('/:id/edit', uploader.single('photo'), (req, res, next) => {
+    //retrieve the current editing post to make use of picture params
+    let prevPost = Editorial.findById(req.params.id)
 
     const { title, category, subtitle, text, author } = req.body
-    const inFocus = (req.body.inFocus === 'true') ? true : false
     const imgName = () => {
         if (req.file.originalname != null) {
-        cloudinary.uploader.destroy(post.publicId)
-        return req.file.originalname
-        } 
-        else return prevPost.imgName
+            cloudinary.uploader.destroy(post.publicId)
+            return req.file.originalname
+        }
+        return prevPost.imgName
     }
     const postData = {
         title: title,
-        category: category, 
-        subtitle: subtitle, 
-        text: text, 
-        author: author, 
-        inFocus: inFocus, 
-        imgName: imgName, imgPath: imgPath, publicId: publicId
+        category: category,
+        subtitle: subtitle,
+        text: text,
+        author: author,
+        inFocus: (req.body.inFocus) ? true : false,
+        imgName: imgName,
+        imgPath: (req.file.path) ? req.file.path : prevPost.imgPath,
+        publicId: (req.file.filename) ? req.file.filename : prevPost.publicId
     }
-    const imgPath = (req.file.path) ? req.file.path : prevPost.imgPath
-    const publicId = (req.file.filename) ? req.file.filename : prevPost.publicId
-    Editorial.findByIdAndUpdate(req.params.id, postData, {new: true})
-    .then(() => {
-      res.redirect('/editorial');
-    })
-    .catch(err => {
-      next(err);
-    });
+    Editorial.findByIdAndUpdate(req.params.id, postData, { new: true })
+        .then(() => {
+            res.redirect('/editorial')
+        })
+        .catch(err => {
+            next(err)
+        });
 })
 
+// Detele post
 router.get('/editorial/:id/delete/', (req, res, next) => {
     Editorial.findByIdAndDelete(req.params.id)
         .then(post => {
@@ -92,6 +92,8 @@ router.get('/editorial/:id/delete/', (req, res, next) => {
             next(err)
         })
 })
+
+//view Post
 router.get('/view/:id', (req, res, next) => {
     const postId = req.params.id
     Editorial.findById(postId)
@@ -103,7 +105,5 @@ router.get('/view/:id', (req, res, next) => {
         next(err);
       });
 });
-  
-
 
 module.exports = router;
