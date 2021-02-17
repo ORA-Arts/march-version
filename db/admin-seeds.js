@@ -3,9 +3,9 @@ const User = require('../models/User.model');
 const bcrypt = require('bcrypt')
 
 
-const DB_NAME = 'march-version'
+const MONGO_URI = process.env.MONGODB_URI|| "mongodb://localhost/march-version"
 
-mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
+mongoose.connect(MONGO_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
