@@ -35,5 +35,6 @@ router.post('/editorial/new', uploader.single('photo'), (req, res, next) => {
         next(error);
     })
 });
+module.exports = router;
 
 module.exports = router;
