@@ -49,11 +49,7 @@ passport.use(new LocalStrategy({
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(session({ secret: process.env.SESSION_SECRET }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 
 // Express View engine setup
@@ -61,30 +57,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
-//set login variable
-app.use(function(req, res, next) {
-    res.locals.isAuthenticated = req.isAuthenticated()
-    console.log(req.body.user)
-    console.log(res.locals.isAuthenticated)
-    next()
-})
-// set registerHelper to parse date
-const moment = require('moment') 
-const dateFormat = {
-  short: 'DD.MM.YYYY'
-}
-hbs.registerHelper('formatDate', function(datetime, format) {
-  if (moment) {
-    format = dateFormat[format] || format;
-    return moment(datetime).format(format);
-  }
-  else {
-    return datetime;
-  }
-})
-
-hbs.localsAsTemplateData(app);
 
 app.use(
     session({
@@ -100,14 +72,45 @@ app.use(
 
 // end of session configuration
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user._id);
 });
   
 passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    });
+    User.findById(id)
+    .then(dbUser => {
+      done(null, dbUser)
+    })
+    .catch(err => {
+      done(err)
+    })
 });
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// set registerHelper to parse date
+const moment = require('moment') 
+const dateFormat = {
+  short: 'DD.MM.YYYY'
+}
+hbs.registerHelper('formatDate', function(datetime, format) {
+  if (moment) {
+    format = dateFormat[format] || format;
+    return moment(datetime).format(format);
+  }
+  else {
+    return datetime;
+  }
+})
+//set login variable
+app.use(function(req, res, next) {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  console.log(req.body.user)
+  console.log(res.locals.isAuthenticated)
+  next()
+})
+
+hbs.localsAsTemplateData(app);
 
 // default value for title local
 const projectName = "ora-arts";
