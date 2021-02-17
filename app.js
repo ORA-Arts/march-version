@@ -110,7 +110,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 // default value for title local
-const projectName = "march-version";
+const projectName = "ora-arts";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
