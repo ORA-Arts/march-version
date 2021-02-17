@@ -84,8 +84,18 @@
     height: 70px;
     padding-right: 37px;
 }
-.cards {
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 45%;
+    min-width: 648px;
     padding: 20px 0 40px;
+}
+.cards {
     height: min-content;
     display: flex;
     flex-direction: row;
@@ -93,6 +103,7 @@
     justify-content: center;
     align-content:flex-start;
     align-items: flex-start;
+    padding-bottom: 20rem;
 }
 .summaryCard {
     width: 45%;
@@ -153,6 +164,10 @@
     border-bottom: 0.5px solid #000000;
     margin: 10px 0 0;
 }
+.title a {
+    text-decoration: none;
+    color: #000;
+}
 .subtitle {
     font-size: 12px;
     font-style: normal;
@@ -170,6 +185,30 @@
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+}
+
+.cardFooter {
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.cardFooter .btnBlack {
+    color: black;
+    font-size: 12px;
+    padding: 8px 10px;
+    margin: 0 5px 0 5px;
+    border: solid 1px black;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+}
+.cardFooter .btnBlack:hover {
+    background-color: black;
+    color: white
 }
 
 .newPostContainer {
@@ -239,4 +278,32 @@
 #selectCat label:hover {
     background-color:black;
     color: white;
+}
+
+.postContainer {
+    padding: 37px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+}
+.postContainer .text {
+    width: 50vw;
+    text-align: justify;
+    margin: auto;
+    padding-bottom: 20rem;
+}
+.postContainer .postTitle {
+    text-transform: uppercase;
+    font-family: 'editorial_newregular';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #000000;
 }
