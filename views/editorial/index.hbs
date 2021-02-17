@@ -6,7 +6,7 @@
         <p class="focusSubtitle">{{subtitle}}</p>
     </div>
     <div class="controls">
-        {{#if isAuthenticated}}
+        {{#if ../isAuthenticated}}
         <button class="btnWhite">EDIT POST</button>
         <button class="btnWhite">DELETE</button>
         {{/if}}
@@ -35,12 +35,12 @@
                     <p class="author">BY {{author}}</p>
                 </div>
             </div>
-            {{#if isAuthenticated}}
             <div class="cardFooter">
+                {{#if ../isAuthenticated}}
                 <a href="/{{_id}}/edit" class="btnBlack">EDIT POST</a>
                 <a href="/editorial/{{_id}}/delete/" class="btnBlack">DELETE</a>
+                {{/if}}
             </div>
-            {{/if}}
         </div>
         {{/each}}
     </div>
