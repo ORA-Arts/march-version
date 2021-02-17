@@ -1,75 +1,47 @@
-
-    <div class="focusContainer" style="background-image: url('/images/EDITORIAL_TB.jpg">
-        <div class="emphasis">
-            <h2>FOCUS N°1 / <span>TOM BURR</span></h2>
-            <p class="focusSubtitle">EXPLORING GAMES AS AN ART MEDIUM</p>
-        </div>
-        <div class="controls">
-            <button class="btnWhite">EDIT POST</button>
-            <button class="btnWhite">DELETE</button>
-        </div>
+{{#each posts}}
+{{#if inFocus}}
+<div class="focusContainer" style="background-image: url('{{imgPath}}">
+    <div class="emphasis">
+        <a href="/view/{{id}}"><h2><span>{{title}}</span></h2></a>
+        <p class="focusSubtitle">{{subtitle}}</p>
     </div>
-    <div class="editorialContainer">
-        <div class="addBtn">
-            <a href="/editorial/new" class="btnBlack">ADD NEW</a>
-        </div>
-        <div class="cards">
-            {{#each posts}}
-            <div class="cardWrapper">
-                <div class="summaryCard">
-                    <div class="cardImage">
-                        <img src="{{imgPath}}" alt="{{title}}">
-                    </div>
-                    <div class="details">
-                        <h3 class="category">{{category}}</h3>
-                        <span class="date">{{formatDate date 'short'}}</span>
-                        <h2 class="title"><a href="/view/{{id}}">{{title}}</a></h2>
-                        <p class="subtitle">{{subtitle}}</p>
-                        <p class="author">BY {{author}}</p>
-                    </div>
-                </div>
-                <div class="cardFooter">
-                    <a href="/{{_id}}/edit" class="btnBlack">EDIT POST</a>
-                     <a href="/editorial/{{_id}}/delete/" class="btnBlack">DELETE</a>
-                </div>
-            </div>
-            {{/each}}
-            {{!-- <div class="summaryCard">
-                <div class="cardImage">
-                    <img src="/images/EDITORIAL 2.jpg" alt="Editorial" srcset="">
-                </div>
-                <div class="details">
-                    <h3 class="category">EXHIBITIONS</h3>
-                    <span class="date">12.05.2021</span>
-                    <h2 class="title">ANNE IMHOF’S CARTE BLANCHE </h2>
-                    <p class="subtitle">EXCLUSIVELY DISCOVER THE GOLDEN LION’S WINNER LAST BREAKOUT SHOW AT THE PALAIS DE TOKYO </p>
-                    <p class="author">BY RACHEL LEQUESNE </p>
-                </div>
-            </div>
-            
+    <div class="controls">
+        {{#if isAuthenticated}}
+        <button class="btnWhite">EDIT POST</button>
+        <button class="btnWhite">DELETE</button>
+        {{/if}}
+    </div>
+</div>
+{{/if}}
+{{/each}}
+<div class="editorialContainer">
+    <div class="addBtn">
+        {{#if isAuthenticated}}
+        <a href="/editorial/new" class="btnBlack">ADD NEW</a>
+        {{/if}}
+    </div>
+    <div class="cards">
+        {{#each posts}}
+        <div class="cardWrapper">
             <div class="summaryCard">
                 <div class="cardImage">
-                    <img src="/images/EDITORIAL 4.jpg" alt="Editorial" srcset="">
+                    <img src="{{imgPath}}" alt="{{title}}">
                 </div>
                 <div class="details">
-                    <h3 class="category">EXHIBITIONS</h3>
-                    <span class="date">12.05.2021</span>
-                    <h2 class="title">ANNE IMHOF’S CARTE BLANCHE </h2>
-                    <p class="subtitle">EXCLUSIVELY DISCOVER THE GOLDEN LION’S WINNER LAST BREAKOUT SHOW AT THE PALAIS DE TOKYO </p>
-                    <p class="author">BY RACHEL LEQUESNE </p>
+                    <h3 class="category">{{category}}</h3>
+                    <span class="date">{{formatDate date 'short'}}</span>
+                    <h2 class="title"><a href="/view/{{id}}">{{title}}</a></h2>
+                    <p class="subtitle">{{subtitle}}</p>
+                    <p class="author">BY {{author}}</p>
                 </div>
             </div>
-            <div class="summaryCard">
-                <div class="cardImage">
-                    <img src="/images/EDITORIAL_DEBATE.jpg" alt="Editorial" srcset="">
-                </div>
-                <div class="details">
-                    <h3 class="category">EXHIBITIONS</h3>
-                    <span class="date">12.05.2021</span>
-                    <h2 class="title">ANNE IMHOF’S CARTE BLANCHE </h2>
-                    <p class="subtitle">EXCLUSIVELY DISCOVER THE GOLDEN LION’S WINNER LAST BREAKOUT SHOW AT THE PALAIS DE TOKYO </p>
-                    <p class="author">BY RACHEL LEQUESNE </p>
-                </div>
-            </div> --}}
+            {{#if isAuthenticated}}
+            <div class="cardFooter">
+                <a href="/{{_id}}/edit" class="btnBlack">EDIT POST</a>
+                <a href="/editorial/{{_id}}/delete/" class="btnBlack">DELETE</a>
+            </div>
+            {{/if}}
         </div>
+        {{/each}}
     </div>
+</div>
