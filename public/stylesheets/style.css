@@ -680,8 +680,16 @@ padding-right: 5vw;
   display: flex;
   justify-content: space-between;
   padding-right: 5vw;
+  padding-top: 3vh;
   padding-left: 5vw;
+  height: 50px;
   align-items: center;
+}
+
+#artistHeader h1 {
+  font-size: 24px;
+  font-family: "akzidenz-grotesk_proregular";
+  margin: 0px;
 }
 
 #getInTouch .btnWhite{
@@ -701,11 +709,16 @@ padding-right: 5vw;
 
 #artistAllSections {
   padding-top: 10px;
+  padding-right: 5vw;
+  padding-left: 5vw;
 }
 
 #artistSection1 {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   display: flex;
-  padding: 0% 10%;
+  align-items: flex-start;
+  width: inherit;
 }
 
 #artistSection1 img{
@@ -719,9 +732,14 @@ padding-right: 100px;
 }
 
 
-#textHeaderArtist h2{
+#textHeaderArtist  h1{
 font-family: 'editorial_newregular';
-font-size: 25px;
+font-size: 30px;
+    }
+
+ #selectionHeader h1{
+font-family: 'editorial_newregular';
+font-size: 30px;
     }
 
 #textHeaderArtist p{
@@ -734,15 +752,13 @@ line-height: 25px;
   #selectionHeader{
     display: flex;
     justify-content: space-between;
-    padding-right: 5vw;
-    padding-left: 5vw;
     align-items: center;
   }
 
   .lineComity {
     display: flex;
     justify-content: space-around;
-    margin: 0 3vw;
+    margin: 5vh 3vw;
   }
 
   .memberComity {
@@ -762,4 +778,27 @@ line-height: 25px;
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
+  }
+
+  #postSelection {
+    display: flex;
+    width: inherit;
+    margin-bottom: 10vh;
+  }
+
+
+  #postSelection img{
+    width: 40vw;
+  }
+
+  #postSelText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+
+  }
+  #postSelection p{
+    text-align: justify;
+text-justify: inter-word;
+line-height: 25px;
   }
