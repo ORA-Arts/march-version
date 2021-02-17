@@ -1,10 +1,17 @@
+@import 'editorial.css';
+
 #page-container {
   position: relative;
   min-height: 100vh;
 }
 
+
 body {
-  font: 14px "akzidenz-grotesk_proregular"}
+  font: 14px "akzidenz-grotesk_proregular";
+  margin: 0;
+  padding: 0;
+}
+
 
 h1 {
     font-family: 'editorial_newregular', Arial, sans-serif;
@@ -22,7 +29,7 @@ h1 {
 
 /* NAVBAR */
 
- #navbar {
+#navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +88,7 @@ h1 {
 
 /* FOOTER */
 #footer{
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   display: flex;
   margin-top: 10px;

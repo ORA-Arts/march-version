@@ -24,11 +24,16 @@ router.post('/login', (req, res) => {
         if (bcrypt.compareSync(password, userFromDB.password)) {
           // password and hash match
           // now we want to log the user in
+<<<<<<< HEAD
+          req.session.user = userFromDB
+          res.redirect('/editorial')
+=======
           console.log(userFromDB.email)
           req.login(userFromDB, function(err) {
             if (err) { return next(err) }
             return res.redirect('/editorial')
           })
+>>>>>>> master
         } else {
           res.render('/', { message: 'Invalid credentials' })
         }
