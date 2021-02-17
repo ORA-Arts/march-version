@@ -39,6 +39,7 @@
     border: solid 1px black;
     cursor: pointer;
     background-color: transparent;
+    text-decoration: none;
 }
 .btnBlack:hover {
     background-color: black;
@@ -104,6 +105,7 @@
     align-content: stretch;
     align-items: stretch;
     margin: 20px 20px;
+    text-transform: uppercase;
 }
 .summaryCard .cardImage {
     margin: 5px;
@@ -168,4 +170,73 @@
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+}
+
+.newPostContainer {
+    padding: 5rem 37px 5rem 37px;
+    text-transform: uppercase;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vh;
+}
+.inputs span {
+    font-size: 10px;
+    padding: 0 0 10px 0;
+
+}
+
+.inputs input{
+  border:none;
+  border-bottom: 0.5px solid grey;
+  padding: 10px 10px;
+  outline: none;
+}
+
+.inputs p {
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+.inputs textarea {
+    outline: none;
+    font-family: inherit;
+}
+
+#selectCat {
+    display: flex;
+}
+  
+#selectCat input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+  
+#selectCat label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:white;
+    padding: 3px 7px;
+    font-size: 12px;
+    border: 2px solid #444; 
+    width: 120px;
+    height: 30px;
+    margin-right: 1vw;
+}
+  
+#selectCat input[type="radio"]:checked + label {
+    background-color:black;
+    color: white;
+  }
+  
+#selectCat input[type="radio"]:focus + label {
+    border: 2px solid black;
+}
+  
+#selectCat label:hover {
+    background-color:black;
+    color: white;
 }

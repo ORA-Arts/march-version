@@ -7,7 +7,7 @@ const editorialSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['Exhibitions', 'Editorial', 'News']
+        enum: ['exhibitions', 'editorial', 'news']
     },
     subtitle: {
         type: String,
@@ -15,18 +15,20 @@ const editorialSchema = new Schema({
     },
     text: {
         type: String,
-        max: 2000
+        max: 3000
     },
-    imgNameCard: String,
-    imageURLCard: String,
-    publicIdCard: String,
-    imgNamePost: String,
-    imageURLPost: String,
-    publicIdPost: String,
+    imgName: String,
+    imgPath: String,
+    publicId: String,
+
     inFocus: Boolean,
     author: {
         type: String,
-        max: 100
+        max: 50
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
