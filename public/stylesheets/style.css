@@ -22,6 +22,7 @@ body {
 #page-container {
   position: relative;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 
@@ -111,13 +112,14 @@ footer{
   background-color: white;
   bottom: 0;
   display: flex;
-  margin-top: 10px;
+  margin-top: 1rem;
   align-items: top;
-  padding-right: 5vw;
-  padding-left: 5vw;
-  justify-content: space-between;
+  /* padding-right: 2rem;
+  padding-left: 2rem; */
+  padding-bottom: 1rem;
+  justify-content: space-around;
   width: 90vw;
-  height: 40px;
+  height: auto;
   transition: bottom 0.2s ease-in-out;
 }
 
@@ -184,9 +186,9 @@ footer a {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  
+
 }
 
 
