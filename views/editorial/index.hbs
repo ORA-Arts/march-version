@@ -6,7 +6,7 @@
         <p class="focusSubtitle">{{#if $last}}{{subtitle}}{{#if $last}}</p>
     </div>
     <div class="controls">
-        {{#if ../isAuthenticated}}
+        {{#if ../isAuthenticated[0]}}
         <button class="btnWhite">EDIT POST</button>
         <button class="btnWhite">DELETE</button>
         {{/if}}
