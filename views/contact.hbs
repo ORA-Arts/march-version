@@ -9,12 +9,12 @@
             <h2>GET IN TOUCH WITH OUR TEAM REGARDING ANY QUESTIONS YOU MIGHT HAVE WITH OUR ACTIVITIES</h2>
             <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form">
                 <div id="emailAndName">
-                    <input type="text" name="name" id="name" placeholder="NAME*">
-                    <input type="email" name="email" id="email" placeholder="EMAIL*">
+                    <input type="text" name="name" id="name" placeholder="NAME*" required>
+                    <input type="email" name="email" id="email" placeholder="EMAIL*" required>
                     <p>TOPIC*</p>
                 </div>
                 <div id="selectTopic">
-                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT">
+                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT" checked="checked">
                     <label for="support">SUPPORT AN ARTIST PROJECT</label>
 
                     <input type="radio" id="advisory" name="object" value="PERSONAL ADVISOR">
@@ -27,7 +27,7 @@
                     <label for="openCall">ARTIST OPEN CALL</label>
                 </div>
                 <div id="inquireAndButton">
-                    <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT*">
+                    <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT*" required>
                     <button type="submit" value="submit" class="btnWhite">SUBMIT</button>
                 </div>
             </form>
