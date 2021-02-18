@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>{{title}}</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="stylesheet" href="/webfontkit/stylesheet.css" />
-   </head>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>{{title}}</title>
+   <link rel="stylesheet" href="/stylesheets/style.css" />
+   <link rel="stylesheet" href="/webfontkit/stylesheet.css" />
+</head>
 
-   <body>
-      <div id="page-container">
+<body>
+   <div id="page-container">
       <nav id="navbar">
          <a href="/">
             <img src="./images/LOGO_1.png" alt="ORA" width="100" height="50">
@@ -26,12 +26,12 @@
                {{#if isAuthenticated}}
                <a href="/logout" class="link">LOGOUT</a>
                {{else}}
-               <a href="#" class="link" id='openModal'>LOGIN</a>
+               <a href="#" class="link" id="openLoginModal">LOGIN</a>
                {{/if}}
+               <a href="#" class="link" id="openLoginModal" style="display:none;">LOGIN</a>
             </li>
          </ul>
       </nav>
-
       {{{body}}}
       <div id="loginModal" class="modal">
          <!-- Modal content -->
@@ -44,8 +44,6 @@
             </form>
          </div>
       </div>
-      
-
       <div id="newsletterModal" class="modal">
          <!-- PopUp content -->
          <div class="popUp">
@@ -69,13 +67,14 @@
          <div class="footerElement" id="newsletter">
             <h2>NEWSLETTER</h2>
             <form action="/" method="POST">
-            <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required>
-            <button id="submitBtn" type="submit">SUBMIT</button>
+               <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required>
+               <button id="submitBtn" type="submit">SUBMIT</button>
             </form>
          </div>
          <div class="footerElement" id="footerORA">
             <h2>ORA</h2>
-            <p>ORA is the only platform connecting artists, curators, institutions, galleries and collectors around a <span style="font-weight:bold">cooperative system.</span></p>
+            <p>ORA is the only platform connecting artists, curators, institutions, galleries and collectors around a
+               <span style="font-weight:bold">cooperative system.</span></p>
          </div>
          <div class="footerElement" id="legal">
             <h2>LEGAL</h2>
@@ -83,7 +82,8 @@
             <p>ALL RIGHT RESERVED <br> © ORA 2021</p>
          </div>
       </footer>
-      </div>
-      <script src="/js/script.js"></script>
-   </body>
+   </div>
+   <script src="/js/script.js"></script>
+</body>
+
 </html>
