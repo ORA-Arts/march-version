@@ -57,6 +57,7 @@ h1 {
   position: fixed;
   width: 100%;
   top: 0;
+    z-index: 9999;
 }
 
 #navtitles { 
@@ -201,7 +202,7 @@ footer a {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
 }
@@ -278,10 +279,9 @@ footer a {
   .imageContainer{
     display: block;
     height: 77vh;
-
     width: 28vw;
     max-height: 750px;
-    margin:0px 10px;
+    margin: 0 5px;;
   }
 
   .blurEffectHP {
