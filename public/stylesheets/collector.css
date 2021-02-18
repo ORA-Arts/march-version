@@ -5,7 +5,7 @@
     justify-content:flex-start;
     align-content: space-between;
     align-items: stretch;
-    padding-top: 63px;
+    padding-top: 60px;
 }
 .header {
     background-color: #F1F1F1;
@@ -15,6 +15,7 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 .header p {
     font-family: "akzidenz-grotesk_proregular";
@@ -38,7 +39,7 @@
 }
 
 #collectorMain {
-    padding: 37px;
+    /* padding: 37px; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -73,7 +74,7 @@
     align-content: center;
     align-items: center;
     width: 50vw;
-    height: 50vh;
+    height: 60vh;
 }
 .tab {
     overflow: hidden;
@@ -234,6 +235,7 @@
     letter-spacing: 0em;
     text-align: center;
     min-height: 52px;
+    margin-top: 2rem;
 
 }
 .boxes a:hover{
@@ -264,6 +266,7 @@
     min-height: 52px;
 }
 .supportFooter {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
