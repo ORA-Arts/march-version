@@ -1,5 +1,6 @@
 @import 'editorial.css';
 @import 'collector.css';
+@import 'about.css';
 
 html {
   scroll-behavior: smooth;
@@ -615,10 +616,10 @@ input::placeholder {
   padding-top:220px;
 }
 
-.sectionsWIO{
+.two {
   height: 380px;
   padding: 10px 10px;
-  display: flex;
+  display: flex; 
   align-items: flex-start;
   justify-content: center;
 }
