@@ -5,8 +5,13 @@ html {
   scroll-behavior: smooth;
 }
 
-htmal a {
+html a {
   text-decoration: none;
+}
+
+
+body {
+  margin:0;
 }
 
 
@@ -98,38 +103,47 @@ h1 {
 }
 
 /* FOOTER */
-#footer{
-  position: fixed;
+footer{
   background-color: white;
   bottom: 0;
   display: flex;
   margin-top: 10px;
-  margin-right: 50px;
   align-items: top;
-  justify-content: space-evenly;
-  width: 100%;
-  min-height: 50px;
-  max-height: 80px;
+  padding-right: 5vw;
+  padding-left: 5vw;
+  justify-content: space-between;
+  width: 90vw;
+  height: 40px;
+  transition: bottom 0.2s ease-in-out;
 }
 
-#footer h2 {
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+footer h2 {
   font-size: 14px;
   margin: 3px 0px;
 }
 
-#footer p {
+footer p {
   font-size: 12px;
   margin: 1px 0px;
 }
 
-#footer a {
+footer a {
   text-decoration: none;
   color: black;
   font-size: 12px;
 }
 
 .footerElement{
-  margin: 0 5px;
+  margin:0;
 }
 
 #footerAbout{
@@ -157,7 +171,6 @@ h1 {
 /* Main container for images */
 .indexWrap{
   padding-top:55px;
-  padding-bottom: 60px;
 }
 
 #allImagesContainer {
