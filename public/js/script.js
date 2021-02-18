@@ -9,10 +9,10 @@ document.addEventListener(
 //navbar selected different styling
 
   $(function() {
+    if (location.pathname !== "/") {
     $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('activeLink');
+    }
   });
-
-
 
 // sign-up / login modal
 

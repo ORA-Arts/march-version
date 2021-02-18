@@ -7,6 +7,10 @@ html {
 }
 
 
+html a{
+  text-decoration: none;
+}
+
 body {
   margin:0;
 }
@@ -516,6 +520,8 @@ input::placeholder {
 
 #selectTopic {
   display: flex;
+  width: auto;
+  justify-content: space-between;
 }
 
 #selectTopic input[type="radio"] {
@@ -536,6 +542,13 @@ input::placeholder {
   width: 120px;
   height: 30px;
   margin-right: 1vw;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 #selectTopic input[type="radio"]:checked + label {
