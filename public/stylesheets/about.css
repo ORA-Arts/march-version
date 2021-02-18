@@ -23,6 +23,7 @@
   .zero.is-visible {
     transform: translateX(0);
   }
+
   
   .zero img{
     display: block;
@@ -44,3 +45,17 @@
     padding-left: 30px;
     margin-top:10px;
   }
+
+.aboutSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+    margin: 1rem 0;
+    z-index: -10;
+}
+.aboutSection.is-hidden {
+    transform: translateX(+150%);
+}

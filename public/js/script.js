@@ -121,18 +121,36 @@ function checkPosition() {
   let windowY = window.scrollY;
   if (windowY < scrollPos) {
     // Scrolling UP
-    nav.classList.add('is-visible');
-    nav.classList.remove('is-hidden');
+    nav.classList.add('is-visible')
+    nav.classList.remove('is-hidden')
   } else {
     // Scrolling DOWN
     nav.classList.add('is-hidden');
-    nav.classList.remove('is-visible');
+    nav.classList.remove('is-visible')
   }
   scrollPos = windowY;
 }
 
+let navScrollPos = 300;
+const abo = document.querySelectorAll('.aboutSection');
+function checkAboutPosition() {
+  let windowY = window.scrollY;
+    if (windowY < navScrollPos) {
+      // Scrolling UP
+      // el.classList.add('animate__slideInLeft')
+      // el.classList.remove('is-hidden')
+    } else {
+      // Scrolling DOWN
+      abo[1].classList.add('animate__slideInLeft')
+      abo[1].classList.remove('is-hidden')
+      abo[2].classList.add('animate__slideInRight')
+      abo[2].classList.remove('is-hidden')
+    } navScrollPos = windowY;
+}
+
 // window.addEventListener('scroll', checkPosition);
 window.addEventListener('scroll', debounce(checkPosition));
+window.addEventListener('scroll', debounce(checkAboutPosition));
 
 
 //Footer behaviour
