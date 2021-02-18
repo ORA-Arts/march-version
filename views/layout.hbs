@@ -67,10 +67,6 @@
          <div class="footerElement" id="newsletter">
             <h2>NEWSLETTER</h2>
 
-            <form action="/" method="POST">
-               <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required>
-               <button id="submitBtn" type="submit">SUBMIT</button>
-
             <form id="newsletterForm" action="/" method="POST">
             <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required onblur="this.style.borderColor= this.checkValidity() ? 'green' : 'red'" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <button id="submitBtn" type="submit">SUBMIT</button>
