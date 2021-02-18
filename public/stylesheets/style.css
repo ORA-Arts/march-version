@@ -13,6 +13,9 @@ html a {
 body {
   margin:0;
 }
+.indexWrap{
+  padding-top:55px;
+}
 
 
 #page-container {
@@ -169,12 +172,10 @@ footer a {
 
 /* HOMEPAGE */
 /* Main container for images */
-.indexWrap{
-  padding-top:55px;
-}
+
 
 #allImagesContainer {
-  height: 77vh;
+  height: 88vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,10 +287,18 @@ left: 75%;
     max-height: 750px;
   }
 
-  /* .imageContainer:hover{
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-  } */
+  .blurEffectHP {
+    display: block;
+    height: 77vh;
+    width: 30vw;
+    max-height: 750px;
+  }
+
+  .imageContainer .blurEffectHP:hover{
+    backdrop-filter: blur(3px)
+  }
+
+
 
   .imageContainer h2{
     visibility: visible;
@@ -897,7 +906,6 @@ justify-content: center;
   background-image: url("../images/SUPPORT AN ARTIST 6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(2px);
 }
 
 #image2 {
