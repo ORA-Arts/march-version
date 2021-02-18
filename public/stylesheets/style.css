@@ -6,10 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
-html a {
+
+html a{
   text-decoration: none;
 }
-
 
 body {
   margin:0;
@@ -57,6 +57,7 @@ h1 {
   position: fixed;
   width: 100%;
   top: 0;
+    z-index: 9999;
 }
 
 #navtitles { 
@@ -102,10 +103,25 @@ h1 {
   width: 0;
   margin-top:7px;
 }
+
 #navtitles > li > a:hover:after { 
   width: 100%; 
   left: 0; 
 }
+
+.activeLink{
+  font-family: 'akzidenz-grotesk_probold';
+  border-bottom: 1px solid #000;
+  padding-bottom: 0px;
+}
+
+#navtitles > li > .activeLink:hover:after { 
+  width: 0%; 
+  left: 0; 
+}
+
+
+
 
 /* FOOTER */
 footer{
@@ -185,7 +201,7 @@ footer a {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
 }
@@ -262,10 +278,9 @@ footer a {
   .imageContainer{
     display: block;
     height: 77vh;
-
     width: 28vw;
     max-height: 750px;
-    margin:0px 10px;
+    margin: 0 5px;;
   }
 
   .blurEffectHP {
@@ -445,26 +460,46 @@ input::placeholder {
   background-position: center;
   max-height: 750px;
   display: block;
-  height: 77vh;
+  height: inherit;
   width: 45vw;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #h1Wrapper a{
   text-decoration: none;
   color: black;
   font-family: 'akzidenz-grotesk_probold';
   font-size: 16px;
+  margin: 0;
+  padding-top: 0;
 }
+
+#h1Wrapper h1{
+margin-top: 0;
+padding-top: 0;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
 
 #formContainer h2{
   font-family: 'editorial_newregular', sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
+  text-align: justify;
+text-justify: inter-word;
+padding-top: 0;
+margin-top: 0;
 }
 
+
+
 #formContainer{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 2vw;
-  height: 77vh;
+  height: inherit;
   width: 45vw;
   max-height: 750px;
 }
@@ -473,6 +508,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   padding-top: 2vh;
+  width: inherit;
 }
 
 #emailAndName input{
@@ -483,6 +519,10 @@ input::placeholder {
 }
 
 #emailAndName p{
+  padding-left: 10px;
+}
+
+#topicContainer p{
   padding-left: 10px;
 }
 
@@ -497,13 +537,18 @@ input::placeholder {
   border-top: 0.5px solid grey;
   border-bottom: 0.5px solid grey;
   padding: 10px 10px;
-  padding-bottom: 25%;
+  padding-bottom: 13vh;
   outline: none;
+  height: 13vh;
+  font-size: 13px;
+  font-family: "akzidenz-grotesk_proregular";
 }
 
 
 #selectTopic {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 #selectTopic input[type="radio"] {
@@ -523,7 +568,13 @@ input::placeholder {
   border: 2px solid #444; 
   width: 120px;
   height: 30px;
-  margin-right: 1vw;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 #selectTopic input[type="radio"]:checked + label {
