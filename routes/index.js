@@ -55,7 +55,7 @@ router.post('/', (req,res,next) => {
   .then(found => {
     if (found !== null) {
       console.log('already there')
-      res.render('index', {header: 'THANKS AGAIN BUT', message:'WE ALREADY HAVE YOUR EMAIL'});
+      res.render('index', {message:'EMAIL ALREADY EXISTS'});
     }
     else {
       Newsletter.create({
@@ -63,7 +63,7 @@ router.post('/', (req,res,next) => {
       })
       .then(email => {
         console.log('this email was added to the DB', email)
-        res.render('index', {header: 'THANKS', message:'YOUR EMAIL WAS ADDED TO THE NEWSLETTER'});
+        res.render('index', {message:'ADDED TO THE NEWSLETTER'});
       })
     }
   })

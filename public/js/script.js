@@ -32,29 +32,29 @@ window.onclick = function(event) {
   }
 }
 
-// //Newsletter MODAL
-const popUpNewsletter = document.getElementById('newsletterModal');
-const btnNewsletter = document.getElementById('submitBtn');
+// // //Newsletter MODAL
+// const popUpNewsletter = document.getElementById('newsletterModal');
+// const btnNewsletter = document.getElementById('submitBtn');
 
-const span1 = document.getElementById("closeCF");
+// const span1 = document.getElementById("closeCF");
 
- btnNewsletter.onclick = function() {
-  const input = document.getElementById('email');
-  popUpNewsletter.style.display = "block";
-}
+//  btnNewsletter.onclick = function() {
+//   const input = document.getElementById('email');
+//   popUpNewsletter.style.display = "block";
+// }
 
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == popUpNewsletter) {
-    popUpNewsletter.style.display = "none";
-  }
-}
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == popUpNewsletter) {
+//     popUpNewsletter.style.display = "none";
+//   }
+// }
 
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function(event) {
-  popUpNewsletter.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span1.onclick = function(event) {
+//   popUpNewsletter.style.display = "none";
+// }
 
 // Contact Form
 //get the form by its id
@@ -125,3 +125,5 @@ function openTab(evt, tabName) {
 }
 // Get the element with id="defaultOpen" and click on it
 document.querySelector("#defaultOpen").click();
+
+//Footer behaviour
