@@ -101,10 +101,10 @@ hbs.registerHelper('formatDate', function(datetime, format) {
   }
 })
 
-hbs.registerHelper("foreach",function(arr,options) {
+hbs.registerHelper("foreach",function(arr, options) {
   if(options.inverse && !arr.length)
       return options.inverse(this);
-
+ 
   return arr.map(function(item,index) {
       item.$index = index;
       item.$first = index === 0;
@@ -112,6 +112,14 @@ hbs.registerHelper("foreach",function(arr,options) {
       return options.fn(item);
   }).join('');
 });
+
+hbs.registerHelper('foreachfocus', function(arr, options){
+  for( let i = 0; i < arr.length; i++){ 
+    if ( arr[i].onFocus === 5) { 
+        arr.splice(i, 1); 
+    }
+}
+})
 //set login variable
 app.use(function(req, res, next) {
   res.locals.isAuthenticated = req.isAuthenticated()
