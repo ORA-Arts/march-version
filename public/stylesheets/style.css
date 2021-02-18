@@ -556,24 +556,7 @@ input::placeholder {
 }
 
 /* WHAT IS ORA */
-
-
-#section0 {
-  margin-top: 1vh;
-  width: 100%;
-  height: 160px;
-  background-color: #F4F4F4;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  padding-left: 3vw;
-}
-
-#section0 img{
-  display: block;
-  height: 130px;
-  width: auto;
-}
+x
 
 #textTopAbout {
   height: 130px;
@@ -583,24 +566,10 @@ input::placeholder {
   padding-bottom: 10px;
 }
 
-#section0 h1 {
-  font-family: 'akzidenz-grotesk_proregular';
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 20px;
-}
-
 #secondLine{
   padding-left: 15px;
 }
 
-#section0 h2 {
-  font-family: 'akzidenz-grotesk_prolight';
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-left: 30px;
-  margin-top:10px;
-}
 
 /* Generic Section */
 
