@@ -99,7 +99,7 @@ span2.onclick = function(event) {
   popUpContact.style.display = "none";
 }
 
-function debounce(func, wait = 10, immediate = true) {
+function debounce(func, wait = 20, immediate = true) {
   let timeout;
   return function() {
     let context = this, args = arguments;
