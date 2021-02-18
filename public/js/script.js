@@ -118,7 +118,7 @@ function openTab(evt, tabName) {
 
   }
   collectorMain = document.querySelector("#collectorMain")
-  collectorMain.classList.toggle("bg-special")
+  collectorMain.classList.toggle("bg-services")
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";

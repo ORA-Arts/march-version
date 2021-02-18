@@ -15,7 +15,7 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 .header p {
     font-family: "akzidenz-grotesk_proregular";
@@ -39,19 +39,19 @@
 }
 
 #collectorMain {
-    /* padding: 37px; */
+    padding: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    
+    padding-bottom: 5rem;
     
 }
 .bg-services {
     background-image: url('../images/COLLECTOR SPACE 2.jpg'), url('../images/CONNECTOR SPACE 5.jpg');
-    background-size: 400px auto;
+    background-size: 350px auto;
     background-position: center left -10%, center right -10%;
     background-repeat: no-repeat;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
@@ -59,7 +59,7 @@
 
 .bg-special {
     background-image: url('../images/COLLECTOR SPACE 3.jpg'), url('../images/COLLECTOR SPACE 1.jpg');
-    background-size: 400px auto;
+    background-size: 350px auto;
     background-position: center left -10%, center right -10%;
     background-repeat: no-repeat;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
@@ -73,8 +73,8 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    width: 50vw;
-    height: 60vh;
+    width: 60vw;
+    height: 70vh;
 }
 .tab {
     overflow: hidden;
