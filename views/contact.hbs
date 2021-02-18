@@ -1,43 +1,103 @@
 <div class="indexWrap">
-    <div id="contactContainer">
-        <div id="contactImage">
-        </div>
-        <div id="formContainer">
-            <div id="h1Wrapper">
-                <h1><a href="/contact-us">CONTACT US</h1></a>
-            </div>
-            <h2>GET IN TOUCH WITH OUR TEAM REGARDING ANY QUESTIONS YOU MIGHT HAVE WITH OUR ACTIVITIES</h2>
-            <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form">
-                <div id="emailAndName">
-                    <input type="text" name="name" id="name" placeholder="NAME*" required>
-                    <input type="email" name="email" id="email" placeholder="EMAIL*" required>
-                    <p>TOPIC*</p>
-                </div>
-                <div id="selectTopic">
-                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT" checked="checked">
-                    <label for="support">SUPPORT AN ARTIST PROJECT</label>
+    <div class="tabsContact">
 
-                    <input type="radio" id="advisory" name="object" value="PERSONAL ADVISOR">
-                    <label for="advisory">PERSONAL ADVISOR</label>
-                    
-                    <input type="radio" id="sourcing" name="object" value="SPECIAL SOURCING">
-                    <label for="sourcing">SPECIAL SOURCING</label>
-                    
-                    <input type="radio" id="openCall" name="object" value="ARTIST OPEN CALL">
-                    <label for="openCall">ARTIST OPEN CALL</label>
+        <div id="contactContainer">
+            <div id="contactImage">
+            </div>
+            <div id="formContainer">
+                {{!-- <div class="tabContact">
+                    <button class="tablinks" onclick="openTab(event, 'Contact')" id="defaultOpen">CONTACT US</button>
+                    /
+                    <button class="tablinks" onclick="openTab(event, 'Team')">TEAM</button>
+                </div id="Contact" class="tabcontent"> --}}
+                    <div id="h1Wrapper">
+                        <h1><a href="/contact-us">CONTACT US</h1></a>
+                    </div>
+                     <h2>GET IN TOUCH WITH OUR TEAM REGARDING ANY QUESTIONS YOU MIGHT HAVE WITH OUR ACTIVITIES</h2>
+                        <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form">
+                            <div id="emailAndName">
+                                <input type="text" name="name" id="name" placeholder="NAME*" required>
+                                <input type="email" name="email" id="email" placeholder="EMAIL*" required>
+
+                            </div>
+                            <div id="topicContainer">
+                                <p>TOPIC*</p>
+                                <div id="selectTopic">
+                                    <input type="radio" id="support" name="object" value="SUPPORT AN ARTIST PROJECT"
+                                        checked="checked">
+                                    <label for="support">SUPPORT AN ARTIST PROJECT</label>
+
+                                    <input type="radio" id="advisory" name="object" value="PERSONAL ADVISOR">
+                                    <label for="advisory">PERSONAL ADVISOR</label>
+
+                                    <input type="radio" id="sourcing" name="object" value="SPECIAL SOURCING">
+                                    <label for="sourcing">SPECIAL SOURCING</label>
+
+                                    <input type="radio" id="openCall" name="object" value="ARTIST OPEN CALL">
+                                    <label for="openCall">ARTIST OPEN CALL</label>
+                                </div>
+                            </div>
+                            <div id="inquireAndButton">
+                                <textarea type="text" name="body" id="body" placeholder="INQUIRE ABOUT*" required rows="25" cols="30"> </textarea>
+                                <button type="submit" value="submit" class="btnWhite">SUBMIT</button>
+                            </div>
+                        </form>
+                
                 </div>
-                <div id="inquireAndButton">
-                    <input type="text" name="body" id="body" placeholder="INQUIRE ABOUT*" required>
-                    <button type="submit" value="submit" class="btnWhite">SUBMIT</button>
+                <div id="Team" class="tabcontent">
+<p>Hello</p>
                 </div>
-            </form>
-        </div>
-        <div id="contactFormModal" class="modal">
-            <div class="popUp">
-                <span id="closeNL" class="close">&times;</span>
-                <h2>YOUR MESSAGE HAS BEEN SENT</h2>
-                <p>SOMEONE FROM OUR TEAM WILL GET BACK TO YOU SHORTLY</p>
+            <div id="contactFormModal" class="modal">
+                <div class="popUp">
+                    <span id="closeNL" class="close">&times;</span>
+                    <h2>YOUR MESSAGE HAS BEEN SENT</h2>
+                    <p>SOMEONE FROM OUR TEAM WILL GET BACK TO YOU SHORTLY</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+{{!-- <script>
+$(function() {
+    $("#body").keypress(function (e) {
+        if(e.which == 13) {
+            //submit form via ajax, this is not JS but server side scripting so not showing here
+            $("#chatbox").append($(this).val() + "<br/>");
+            $(this).val("");
+            e.preventDefault();
+        }
+    });
+});
+</script> --}}
+
+{{!-- <script>
+
+
+
+    //tabs panel for collector-area
+    function openTab(evt, tabName) {
+        // Declare all variables
+        let i, tabcontent, tablinks, collectorMain;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+        }
+        collectorMain = document.querySelector("#collectorMain")
+        collectorMain.classList.toggle("bg-special")
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.querySelector("#defaultOpen").click();
+</script> --}}
