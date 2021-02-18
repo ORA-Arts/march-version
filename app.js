@@ -102,6 +102,18 @@ hbs.registerHelper('formatDate', function(datetime, format) {
     return datetime;
   }
 })
+
+hbs.registerHelper("foreach",function(arr,options) {
+  if(options.inverse && !arr.length)
+      return options.inverse(this);
+
+  return arr.map(function(item,index) {
+      item.$index = index;
+      item.$first = index === 0;
+      item.$last  = index === arr.length-1;
+      return options.fn(item);
+  }).join('');
+});
 //set login variable
 app.use(function(req, res, next) {
   res.locals.isAuthenticated = req.isAuthenticated()
@@ -116,7 +128,7 @@ hbs.localsAsTemplateData(app);
 const projectName = "ora-arts";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
+app.locals.title = `${projectName} | developed by core and pat`
 console.log(app.locals)
 
 // 👇 Start handling routes here
