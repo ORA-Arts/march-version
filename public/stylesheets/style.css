@@ -220,23 +220,23 @@ footer a {
 /* Position the buttons */
 #btnLeft{
   width: 160px;
-position: relative;
-top: 85%;
-left: 75%;
+  position: relative;
+  top: 85%;
+  left: 75%;
 }
 
 #btnMiddle{
   width: 160px;
-position: relative;
-top: 85%;
-left: 75%;
-  }
+  position: relative;
+  top: 85%;
+  left: 75%;
+}
 
 #btnRight{
 width: 160px;
-position: relative;
-top: 85%;
-left: 75%;
+  position: relative;
+  top: 85%;
+  left: 75%;
 }
 
   /* Position the text */
@@ -284,7 +284,8 @@ left: 75%;
     display: block;
     height: 77vh;
     width: 30vw;
-    max-height: 750px;
+    max-height: 900px;
+    max-width: 700px;
   }
 
   /* .imageContainer:hover{
@@ -302,6 +303,8 @@ left: 75%;
   background-image: url('../images/HOMEPAGE 1.png');
   max-height: 750px;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #imageMiddle{
@@ -310,12 +313,16 @@ left: 75%;
   background-image: url("../images/HOMEPAGE 2.png");
   max-height: 750px;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 } 
 
 #imageRight{
   margin-left: 5px;
   background-image: url("../images/HOMEPAGE 3.png");
   max-height: 750px;
+  background-position: center;
+  background-size: cover;
 } 
 /*# sourceMappingURL=style.css.map */
 
