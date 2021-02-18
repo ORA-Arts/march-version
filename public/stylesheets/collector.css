@@ -47,6 +47,7 @@
     align-content: center;
     align-items: center;
     padding-bottom: 5rem;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
     
 }
 .bg-services {

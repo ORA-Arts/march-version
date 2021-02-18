@@ -76,15 +76,15 @@ const sendMail = (mail) => {
 };
 
 
-//1.
-// const formEvent = form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   //2.
-//   let mail = new FormData(form);
-//   //3.
-//   sendMail(mail);
-//   popUpContact.style.display = "block";
-// })
+1.
+const formEvent = form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  //2.
+  let mail = new FormData(form);
+  //3.
+  sendMail(mail);
+  popUpContact.style.display = "block";
+})
 
 
 // When the user clicks anywhere outside of the modal, close it
