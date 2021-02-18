@@ -2,6 +2,12 @@ const router = require("express").Router()
 const Editorial = require('../models/Editorial.model')
 const { uploader, cloudinary } = require('../config/cloudinary')
 
+const loginCheck = () => {
+    return (req, res, next) => {
+      (req.isAuthenticated()) ? next() : res.redirect('/');
+    }
+}
+
 // Editorial routes and CRUD functionalites
 // GET editorial
 router.get('/editorial', (req, res, next) => {

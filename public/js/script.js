@@ -9,18 +9,16 @@ document.addEventListener(
 // sign-up / login modal
 
 // Get the modal
-var modal = document.getElementById("loginModal");
+const modal = document.querySelector("#loginModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("openModal");
+document.querySelector("#openLoginModal").onclick = () => { 
+  modal.style.display = "block";
+};
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+const span = document.querySelector(".close");
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() { 
-  modal.style.display = "block";
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -38,7 +36,7 @@ window.onclick = function(event) {
 const popUpNewsletter = document.getElementById('newsletterModal');
 const btnNewsletter = document.getElementById('submitBtn');
 
-const span1 = document.getElementById("closeNL");
+const span1 = document.getElementById("closeCF");
 
  btnNewsletter.onclick = function() {
   const input = document.getElementById('email');
@@ -79,14 +77,14 @@ const sendMail = (mail) => {
 
 
 //1.
-const formEvent = form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  //2.
-  let mail = new FormData(form);
-  //3.
-  sendMail(mail);
-  popUpContact.style.display = "block";
-})
+// const formEvent = form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   //2.
+//   let mail = new FormData(form);
+//   //3.
+//   sendMail(mail);
+//   popUpContact.style.display = "block";
+// })
 
 
 // When the user clicks anywhere outside of the modal, close it
@@ -100,3 +98,30 @@ window.onclick = function(event) {
 span2.onclick = function(event) {
   popUpContact.style.display = "none";
 }
+
+
+//tabs panel for collector-area
+function openTab(evt, tabName) {
+  // Declare all variables
+  let i, tabcontent, tablinks, collectorMain;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+  }
+  collectorMain = document.querySelector("#collectorMain")
+  collectorMain.classList.toggle("bg-special")
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.querySelector("#defaultOpen").click();
