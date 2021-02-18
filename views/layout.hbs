@@ -67,13 +67,10 @@
          <div class="footerElement" id="newsletter">
             <h2>NEWSLETTER</h2>
 
-<<<<<<< HEAD
             <form action="/" method="POST" style="display:none;">
                <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required>
                <button id="submitBtn" type="submit">SUBMIT</button>
 
-=======
->>>>>>> a1eb3382a5c58c67aea5f6789e2dda65ae1b06ff
             <form id="newsletterForm" action="/" method="POST">
             <input type="email" name="email" id="email" value="{{email}}" placeholder="ENTER YOUR EMAIL" required onblur="this.style.borderColor= this.checkValidity() ? 'green' : 'red'" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <button id="submitBtn" type="submit">SUBMIT</button>
@@ -89,6 +86,7 @@
             <h2>LEGAL</h2>
             <a href="/privacy-policy">PRIVACY POLICY</a>
             <p>ALL RIGHT RESERVED <br> © ORA 2021</p>
+            <form action="/contact-us" method="POST" action="send" enctype="multipart/form-data" id="contact-form" style="display:none;"></form>
          </div>
       </footer>
    </div>
