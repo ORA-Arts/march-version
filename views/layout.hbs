@@ -8,6 +8,7 @@
    <title>{{title}}</title>
    <link rel="stylesheet" href="/stylesheets/style.css" />
    <link rel="stylesheet" href="/webfontkit/stylesheet.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
@@ -25,7 +26,7 @@
             <li><a href="/editorial" class="link">EDITORIAL</a></li>
             <li>
                {{#if isAuthenticated}}
-               <a href="/logout" class="link">LOGOUT</a>
+               <a href="/logout" class="link" style="font-weight: 900;">LOGOUT</a>
                {{else}}
                <a href="#" class="link" id="openLoginModal">LOGIN</a>
                {{/if}}
@@ -91,6 +92,9 @@
          </div>
       </footer>
    </div>
+
+   {{!-- RANDON HIDDEN ELEMENTS TO AVOID ERRORS ON THE animation scripts --}}
+   <div class="zero aboutSection" style="display: none;"></div>
    <script src="/js/script.js"></script>
 </body>
 

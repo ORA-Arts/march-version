@@ -39,14 +39,13 @@
 }
 
 #collectorMain {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
     
 }
@@ -57,7 +56,6 @@
     background-repeat: no-repeat;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
-
 .bg-special {
     background-image: url('../images/COLLECTOR SPACE 3.jpg'), url('../images/COLLECTOR SPACE 1.jpg');
     background-size: 350px auto;

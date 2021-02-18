@@ -90,9 +90,7 @@ app.use(passport.session());
 
 // set registerHelper to parse date
 const moment = require('moment') 
-const dateFormat = {
-  short: 'DD.MM.YYYY'
-}
+const dateFormat = {short: 'DD.MM.YYYY'}
 hbs.registerHelper('formatDate', function(datetime, format) {
   if (moment) {
     format = dateFormat[format] || format;

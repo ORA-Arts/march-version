@@ -6,7 +6,7 @@
             galleries for private artwork acquisitions OR PARTICIPATE IN OUR INCUBATOR’S ACTIVITIES
         </p>
     </div>
-    <div id="collectorMain" class="bg-special">
+    <div id="collectorMain" class="bg-services">
         <div class="tabs">
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'Services')" id="defaultOpen">collector services</button>
@@ -29,7 +29,7 @@
                             We pair you with a representative who tailors an experience to fit your needs and
                             preferences.
                         </p>
-                        <a href="#" class="btnBlack">Book a meeting now</a>
+                        <a href="/contact-us" class="btnBlack">Book a meeting now</a>
                     </div>
                     <div class="line"></div>
                     <div class="special">
@@ -38,7 +38,7 @@
                             Create a request with your personal criteria and we will respond with matching artwork
                             proposals.
                         </p>
-                        <a href="#" class="btnBlack">Make a Special Sourcing request now</a>
+                        <a href="/contact-us" class="btnBlack">Make a Special Sourcing request now</a>
                     </div>
                 </div>
             </div>
@@ -56,9 +56,37 @@
                     <li>. Become a <span>cultural actor integrated in today’s artistic community</span></li>
                 </ul>
                 </p>
-                <div class="supportFooter"><a href="#" class="partBtn">Participate Now</a></div>
+                <div class="supportFooter"><a href="/support-an-artist-project" class="partBtn">Participate Now</a></div>
                 
             </div>
         </div>
     </div>
 </div>
+
+<script>
+        //tabs panel for collector-area
+        function openTab(evt, tabName) {
+        // Declare all variables
+        let i, tabcontent, tablinks, collectorMain;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+        }
+        collectorMain = document.querySelector("#collectorMain")
+        collectorMain.classList.toggle("bg-special")
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.querySelector("#defaultOpen").click();
+</script>

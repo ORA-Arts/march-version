@@ -99,31 +99,58 @@ span2.onclick = function(event) {
   popUpContact.style.display = "none";
 }
 
+function debounce(func, wait = 20, immediate = true) {
+  let timeout;
+  return function() {
+    let context = this, args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 
-//tabs panel for collector-area
-function openTab(evt, tabName) {
-  // Declare all variables
-  let i, tabcontent, tablinks, collectorMain;
+let scrollPos = 0;
+const nav = document.querySelector('.zero');
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+function checkPosition() {
+  let windowY = window.scrollY;
+  if (windowY < scrollPos) {
+    // Scrolling UP
+    nav.classList.add('is-visible')
+    nav.classList.remove('is-hidden')
+  } else {
+    // Scrolling DOWN
+    nav.classList.add('is-hidden');
+    nav.classList.remove('is-visible')
   }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-
-  }
-  collectorMain = document.querySelector("#collectorMain")
-  collectorMain.classList.toggle("bg-services")
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  scrollPos = windowY;
 }
-// Get the element with id="defaultOpen" and click on it
-document.querySelector("#defaultOpen").click();
+
+let navScrollPos = 300;
+const abo = document.querySelectorAll('.aboutSection');
+function checkAboutPosition() {
+  let windowY = window.scrollY;
+    if (windowY < navScrollPos) {
+      // Scrolling UP
+      // el.classList.add('animate__slideInLeft')
+      // el.classList.remove('is-hidden')
+    } else {
+      // Scrolling DOWN
+      abo[1].classList.add('animate__slideInLeft')
+      abo[1].classList.remove('is-hidden')
+      abo[2].classList.add('animate__slideInRight')
+      abo[2].classList.remove('is-hidden')
+    } navScrollPos = windowY;
+}
+
+// window.addEventListener('scroll', checkPosition);
+window.addEventListener('scroll', debounce(checkPosition));
+window.addEventListener('scroll', debounce(checkAboutPosition));
+
 
 //Footer behaviour
