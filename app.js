@@ -116,7 +116,7 @@ hbs.localsAsTemplateData(app);
 const projectName = "ora-arts";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
+app.locals.title = `${projectName} | developed by core and pat`
 console.log(app.locals)
 
 // 👇 Start handling routes here
