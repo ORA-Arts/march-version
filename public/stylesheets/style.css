@@ -176,12 +176,12 @@ footer a {
 
 .indexWrap{
 
-  padding:50px 0 30px 0;
+  padding: 80px 0 20px 0;
 }
 
 
 #allImagesContainer {
-  height: 88vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
