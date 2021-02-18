@@ -57,7 +57,6 @@
     background-repeat: no-repeat;
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
-
 .bg-special {
     background-image: url('../images/COLLECTOR SPACE 3.jpg'), url('../images/COLLECTOR SPACE 1.jpg');
     background-size: 350px auto;
