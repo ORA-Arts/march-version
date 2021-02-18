@@ -6,6 +6,14 @@ document.addEventListener(
   false
 );
 
+//navbar selected different styling
+
+  $(function() {
+    $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('activeLink');
+  });
+
+
+
 // sign-up / login modal
 
 // Get the modal
@@ -153,4 +161,3 @@ window.addEventListener('scroll', debounce(checkPosition));
 window.addEventListener('scroll', debounce(checkAboutPosition));
 
 
-//Footer behaviour
