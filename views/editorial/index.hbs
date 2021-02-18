@@ -1,9 +1,9 @@
-{{#each posts}}
+{{#foreach posts}}
 {{#if inFocus}}
-<div class="focusContainer" style="background-image: url('{{imgPath}}">
+<div class="focusContainer" style="background-image: url('{{#if $last}}{{imgPath}}{{#if $last}}">
     <div class="emphasis">
-        <a href="/view/{{id}}"><h2><span>{{title}}</span></h2></a>
-        <p class="focusSubtitle">{{subtitle}}</p>
+        <a href="/view/{{id}}"><h2><span>{{#if $last}}{{title}}{{#if $last}}</span></h2></a>
+        <p class="focusSubtitle">{{#if $last}}{{subtitle}}{{#if $last}}</p>
     </div>
     <div class="controls">
         {{#if ../isAuthenticated}}
@@ -13,7 +13,7 @@
     </div>
 </div>
 {{/if}}
-{{/each}}
+{{/foreach}}
 <div class="editorialContainer">
     <div class="addBtn">
         {{#if isAuthenticated}}
