@@ -3,7 +3,7 @@ const User = require('../models/User.model')
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 
-
+///
 
 // GET login
 router.get('/login', (req, res, next) => {
