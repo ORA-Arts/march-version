@@ -107,57 +107,8 @@ span2.onclick = function(event) {
   popUpContact.style.display = "none";
 }
 
-function debounce(func, wait = 20, immediate = true) {
-  let timeout;
-  return function() {
-    let context = this, args = arguments;
-    let later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    let callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-};
 
-let scrollPos = 0;
-const nav = document.querySelector('.zero');
 
-function checkPosition() {
-  let windowY = window.scrollY;
-  if (windowY < scrollPos) {
-    // Scrolling UP
-    nav.classList.add('is-visible')
-    nav.classList.remove('is-hidden')
-  } else {
-    // Scrolling DOWN
-    nav.classList.add('is-hidden');
-    nav.classList.remove('is-visible')
-  }
-  scrollPos = windowY;
-}
 
-let navScrollPos = 300;
-const abo = document.querySelectorAll('.aboutSection');
-function checkAboutPosition() {
-  let windowY = window.scrollY;
-    if (windowY < navScrollPos) {
-      // Scrolling UP
-      // el.classList.add('animate__slideInLeft')
-      // el.classList.remove('is-hidden')
-    } else {
-      // Scrolling DOWN
-      abo[1].classList.add('animate__slideInLeft')
-      abo[1].classList.remove('is-hidden')
-      abo[2].classList.add('animate__slideInRight')
-      abo[2].classList.remove('is-hidden')
-    } navScrollPos = windowY;
-}
-
-// window.addEventListener('scroll', checkPosition);
-window.addEventListener('scroll', debounce(checkPosition));
-window.addEventListener('scroll', debounce(checkAboutPosition));
 
 
