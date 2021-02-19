@@ -60,12 +60,14 @@
 }
 .emphasis h2 span {
     font-family: 'editorial_newregular';
+    text-transform: uppercase;
     
     
 }
 .emphasis .subtitle {
     padding-top: 18px;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 .editorialContainer {
@@ -108,7 +110,7 @@
     justify-content: center;
     align-content:flex-start;
     align-items: flex-start;
-    padding-bottom: 20rem;
+    padding-bottom: 20px;
 }
 .summaryCard {
     width: 45%;
