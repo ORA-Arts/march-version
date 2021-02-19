@@ -74,7 +74,7 @@ console.log(span2)
 
 const sendMail = (mail) => {
   //1.
-  fetch("http://localhost:3000/contact-us", {
+  fetch("https://ora-arts.herokuapp.com/contact-us", {
     method: "post", //2.
     body: mail, //3.
     
